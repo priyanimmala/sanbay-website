@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Sanbay Networks</title>
+  <meta name="description" content="Enterprise IT infrastructure, cloud solutions, cybersecurity, networking, managed services and digital workplace solutions by Sanbay Networks.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; }
+    .ibm { font-family: 'IBM Plex Sans', sans-serif; }
+    .orange-bar { width: 48px; height: 3px; background: #F57C00; border-radius: 2px; }
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 64px 64px; }
+    .svc-card { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+    .svc-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(24,74,157,0.13); border-color: rgba(24,74,157,0.25); }
+    @media (prefers-reduced-motion: reduce) { .svc-card:hover { transform: none; } }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/96 backdrop-blur-md border-b border-gray-100" style="box-shadow:0 1px 16px rgba(6,42,79,0.07);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[70px]">
+        <a href="index.html" class="flex items-center shrink-0"><img src="brand_assets/sanbay-logo-sm.png" alt="Sanbay Networks" class="h-10 w-auto"></a>
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-medium text-[#5E6774] hover:text-[#184A9D] transition-colors duration-200" style="font-family:'Montserrat',sans-serif;">Home</a>
+          <a href="about.html" class="text-sm font-medium text-[#5E6774] hover:text-[#184A9D] transition-colors duration-200" style="font-family:'Montserrat',sans-serif;">About Us</a>
+          <a href="services.html" class="text-sm font-semibold text-[#184A9D] border-b-2 border-[#F57C00] pb-0.5" style="font-family:'Montserrat',sans-serif;">Services</a>
+          <a href="contact.html" class="text-sm font-medium text-[#5E6774] hover:text-[#184A9D] transition-colors duration-200" style="font-family:'Montserrat',sans-serif;">Contact Us</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="contact.html" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-[#F57C00] text-white text-sm font-semibold rounded-md hover:bg-[#e06f00] transition-colors duration-200 cursor-pointer" style="font-family:'Montserrat',sans-serif;box-shadow:0 2px 10px rgba(245,124,0,0.32);">Request Consultation <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          <button id="mob-btn" class="lg:hidden p-2 text-[#5E6774] cursor-pointer" aria-label="Toggle menu">
+            <svg id="menu-ico" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="close-ico" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mob-menu" class="hidden lg:hidden border-t border-gray-100 py-5 space-y-4">
+        <a href="index.html" class="block text-sm text-[#5E6774]">Home</a>
+        <a href="about.html" class="block text-sm text-[#5E6774]">About Us</a>
+        <a href="services.html" class="block text-sm font-semibold text-[#184A9D]">Services</a>
+        <a href="contact.html" class="block text-sm text-[#5E6774]">Contact Us</a>
+        <a href="contact.html" class="inline-flex px-5 py-2.5 bg-[#F57C00] text-white text-sm font-semibold rounded-md cursor-pointer">Request Consultation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="relative bg-[#062A4F] pt-[70px] overflow-hidden">
+    <div class="absolute inset-0 grid-bg"></div>
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;border:2px solid #F57C00;opacity:0.1;right:-80px;top:50%;transform:translateY(-50%);"></div>
+    <div style="position:absolute;width:280px;height:280px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.18;right:80px;top:50%;transform:translateY(-50%);"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%, rgba(24,74,157,0.3) 0%, transparent 60%);"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full" style="border:1px solid rgba(245,124,0,0.3);background:rgba(245,124,0,0.1);">
+          <span class="text-[#F57C00] text-xs font-semibold tracking-widest uppercase" style="font-family:'Montserrat',sans-serif;">What We Do</span>
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-5 tracking-tight leading-tight">Our Services</h1>
+        <p class="text-gray-300 text-lg leading-relaxed">End-to-end enterprise technology solutions — from infrastructure design to 24/7 managed support — delivered by certified experts.</p>
+      </div>
+    </div>
+    <div class="relative bg-[#184A9D]/40 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-gray-400">
+        <a href="index.html" class="hover:text-white transition-colors duration-200">Home</a>
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="text-white">Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
+  <section class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-[#062A4F] mb-4 tracking-tight">Comprehensive Technology Solutions</h2>
+        <p class="text-[#5E6774] text-lg max-w-2xl mx-auto">Every service is backed by certified partnerships and 20+ years of domain expertise — designed for enterprise scale.</p>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- Service 1: IT Infrastructure -->
+        <div class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);">
+          <div class="bg-[#062A4F] p-8 flex flex-col justify-between relative overflow-hidden">
+            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="6" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">IT Infrastructure</h3>
+              <p class="text-blue-200 text-sm">Servers · Storage · Compute · HCI</p>
+            </div>
+            <div class="mt-6">
+              <div class="text-xs text-gray-400 uppercase tracking-widest mb-2">Vendors</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.1);">HP</span>
+                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.1);">HPE</span>
+                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.1);">Nutanix</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <p class="text-[#5E6774] leading-relaxed mb-6">Enterprise-grade IT infrastructure is the backbone of every high-performing organization. Sanbay designs, procures, deploys, and supports complete infrastructure stacks — from individual servers to complete data center builds.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Server Solutions</div><p class="text-[#5E6774] text-xs">Rack, tower, and blade servers from HP, HPE — sized for your exact workload requirements.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Storage Systems</div><p class="text-[#5E6774] text-xs">SAN, NAS, and all-flash storage arrays for high-performance data management at scale.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Hyper-Converged (HCI)</div><p class="text-[#5E6774] text-xs">Nutanix HCI solutions that simplify operations and reduce infrastructure complexity.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Data Center Design</div><p class="text-[#5E6774] text-xs">End-to-end data center consulting, design, deployment and post-commissioning support.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Cloud Solutions -->
+        <div class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);">
+          <div class="bg-[#184A9D] p-8 flex flex-col justify-between relative overflow-hidden">
+            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Cloud Solutions</h3>
+              <p class="text-blue-200 text-sm">Public · Private · Hybrid Cloud</p>
+            </div>
+            <div class="mt-6">
+              <div class="text-xs text-gray-300 uppercase tracking-widest mb-2">Partners</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">AWS</span>
+                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">Microsoft</span>
+                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">VMware</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <p class="text-[#5E6774] leading-relaxed mb-6">Cloud transformation isn't one-size-fits-all. Sanbay helps organizations design the right cloud strategy — whether public, private, or hybrid — and delivers seamless migration with minimal disruption.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Cloud Strategy & Assessment</div><p class="text-[#5E6774] text-xs">Cloud readiness assessment and multi-cloud architecture design tailored to your business needs.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">AWS Cloud Services</div><p class="text-[#5E6774] text-xs">Authorized AWS partner — infrastructure, migration, cost optimization, and managed services.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Private Cloud (VMware)</div><p class="text-[#5E6774] text-xs">VMware-based private cloud environments for organizations requiring data sovereignty and control.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Hybrid Cloud Architecture</div><p class="text-[#5E6774] text-xs">Seamlessly connect on-premise infrastructure with cloud environments for maximum flexibility.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: Cybersecurity -->
+        <div class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);">
+          <div class="bg-[#062A4F] p-8 flex flex-col justify-between relative overflow-hidden">
+            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Cybersecurity</h3>
+              <p class="text-blue-200 text-sm">Network · Endpoint · Compliance</p>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <p class="text-[#5E6774] leading-relaxed mb-6">In a threat landscape that grows more complex each year, enterprise organizations cannot afford gaps. Sanbay delivers layered security architectures that protect your data, systems, and people.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Network Security</div><p class="text-[#5E6774] text-xs">Firewalls, IDS/IPS, DDoS protection and network segmentation for enterprise perimeter defense.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Endpoint Security</div><p class="text-[#5E6774] text-xs">Advanced endpoint protection, EDR, and device management across your entire organization.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Data Protection & Backup</div><p class="text-[#5E6774] text-xs">Enterprise backup, disaster recovery, and data encryption solutions for business continuity.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Compliance Frameworks</div><p class="text-[#5E6774] text-xs">Security posture assessments and compliance readiness for ISO 27001, GDPR, and sector regulations.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Networking -->
+        <div class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);">
+          <div class="bg-[#184A9D] p-8 flex flex-col justify-between relative overflow-hidden">
+            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16"/><line x1="12" y1="8" x2="18.5" y2="16"/></svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Network & Connectivity</h3>
+              <p class="text-blue-200 text-sm">LAN · WAN · SD-WAN · Wireless</p>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <p class="text-[#5E6774] leading-relaxed mb-6">Reliable network connectivity is mission-critical. Sanbay designs and deploys enterprise networks that scale with your organization — from campus LANs to multi-site WAN architectures.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Enterprise LAN/WAN</div><p class="text-[#5E6774] text-xs">High-performance wired network infrastructure for campuses, data centers, and branch offices.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">SD-WAN Solutions</div><p class="text-[#5E6774] text-xs">Software-defined WAN for intelligent traffic routing, cost reduction, and improved reliability.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Enterprise Wireless</div><p class="text-[#5E6774] text-xs">High-density WiFi 6/6E solutions for hospitals, campuses, manufacturing floors, and offices.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Network Monitoring</div><p class="text-[#5E6774] text-xs">24/7 network performance monitoring, fault management, and proactive issue resolution.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5: Managed IT -->
+        <div class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);">
+          <div class="bg-[#062A4F] p-8 flex flex-col justify-between relative overflow-hidden">
+            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Managed IT Services</h3>
+              <p class="text-blue-200 text-sm">NOC · SOC · AMC · Support</p>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <p class="text-[#5E6774] leading-relaxed mb-6">Free your internal teams to focus on business outcomes, not infrastructure firefighting. Sanbay's managed services provide round-the-clock monitoring, proactive maintenance, and expert support.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">NOC Services (24/7)</div><p class="text-[#5E6774] text-xs">Round-the-clock network operations center monitoring with proactive fault detection and resolution.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Annual Maintenance (AMC)</div><p class="text-[#5E6774] text-xs">Structured AMC contracts covering hardware, software, and on-site support for complete peace of mind.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">IT Helpdesk</div><p class="text-[#5E6774] text-xs">Tiered helpdesk support with SLA-driven response times for L1, L2, and L3 technical issues.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Disaster Recovery</div><p class="text-[#5E6774] text-xs">DR planning, implementation, and regular testing to ensure business continuity under any scenario.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6: Digital Workplace -->
+        <div class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);">
+          <div class="bg-[#184A9D] p-8 flex flex-col justify-between relative overflow-hidden">
+            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Digital Workplace</h3>
+              <p class="text-blue-200 text-sm">Microsoft 365 · VDI · Collaboration</p>
+            </div>
+            <div class="mt-6">
+              <div class="text-xs text-gray-300 uppercase tracking-widest mb-2">Partners</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">Microsoft</span>
+                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">VMware</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <p class="text-[#5E6774] leading-relaxed mb-6">A modern, productive workplace isn't just hardware — it's the right combination of devices, software, and collaboration tools. Sanbay transforms your workplace with Microsoft 365, VDI, and unified endpoint management.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Microsoft 365</div><p class="text-[#5E6774] text-xs">Licensing, deployment, and support for the complete Microsoft productivity and collaboration suite.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Virtual Desktop (VDI)</div><p class="text-[#5E6774] text-xs">VMware Horizon VDI and DaaS solutions for centralized, secure desktop delivery at scale.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Unified Endpoint Management</div><p class="text-[#5E6774] text-xs">Centralized management of all enterprise devices — laptops, desktops, and mobile — with policy enforcement.</p></div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div>
+                <div><div class="font-semibold text-[#062A4F] text-sm mb-0.5">Enterprise Devices</div><p class="text-[#5E6774] text-xs">HP laptops, desktops, and workstations — procurement, deployment, configuration, and warranty support.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="bg-[#F5F7FA] py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
+        <h2 class="text-3xl font-bold text-[#062A4F] mb-4 tracking-tight">Industries We Serve</h2>
+        <p class="text-[#5E6774] max-w-xl mx-auto">Deep sector knowledge that allows us to deliver solutions that meet the unique compliance, scale, and performance demands of each industry.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center transition-colors duration-300" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Healthcare</h4>
+          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Apollo · KIMS · Hospitals</p>
+        </div>
+        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Government</h4>
+          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">ISRO · PSUs · Depts</p>
+        </div>
+        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">BFSI</h4>
+          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Banks · Insurance · Finance</p>
+        </div>
+        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M2 12h2M20 12h2M4.93 19.07l1.41-1.41M19.07 19.07l-1.41-1.41"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Manufacturing</h4>
+          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Industrial · OT/IT Convergence</p>
+        </div>
+        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Education</h4>
+          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">IISc · Universities · Schools</p>
+        </div>
+        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">IT & ITES</h4>
+          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Tech Companies · BPOs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="bg-[#184A9D] py-20 relative overflow-hidden">
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;border:2px solid rgba(255,255,255,0.05);right:-100px;top:50%;transform:translateY(-50%);"></div>
+    <div style="position:absolute;width:300px;height:300px;border-radius:50%;border:1.5px solid rgba(245,124,0,0.18);right:60px;top:50%;transform:translateY(-50%);"></div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">Discuss Your Technology Requirements</h2>
+      <p class="text-blue-200 text-lg mb-10">Our solution architects are ready to design the right infrastructure strategy for your organization.</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-[#F57C00] text-white font-bold rounded-md hover:bg-[#e06f00] transition-colors duration-200 cursor-pointer" style="font-family:'Montserrat',sans-serif;box-shadow:0 4px 20px rgba(245,124,0,0.4);">
+        Request a Consultation <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#062A4F]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <img src="brand_assets/sanbay-logo-sm.png" alt="Sanbay Networks" class="h-10 brightness-0 invert mb-5">
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Enabling organizations with secure, scalable and future-ready technology infrastructure.</p>
+          <p class="text-[#F57C00] text-sm font-semibold" style="font-family:'Montserrat',sans-serif;">Infrastructure. Innovation. Trust.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-xs uppercase tracking-widest mb-5" style="font-family:'Montserrat',sans-serif;">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Home</a></li>
+            <li><a href="about.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">About Us</a></li>
+            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Services</a></li>
+            <li><a href="contact.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Contact Us</a></li>
+            <li><a href="privacy.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-xs uppercase tracking-widest mb-5" style="font-family:'Montserrat',sans-serif;">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">IT Infrastructure</a></li>
+            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Cloud Solutions</a></li>
+            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Cybersecurity</a></li>
+            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Network & Connectivity</a></li>
+            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Managed IT Services</a></li>
+            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Digital Workplace</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-xs uppercase tracking-widest mb-5" style="font-family:'Montserrat',sans-serif;">Contact</h3>
+          <ul class="space-y-3">
+            <li><a href="tel:8008011799" class="flex items-center gap-2 text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>8008011799</a></li>
+            <li><a href="https://www.sanbay.net" class="flex items-center gap-2 text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>www.sanbay.net</a></li>
+          </ul>
+          <div class="mt-5">
+            <h4 class="text-gray-300 text-xs font-bold uppercase tracking-wider mb-3">Our Offices</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 text-xs text-gray-400 rounded" style="background:rgba(255,255,255,0.06);">Bengaluru</span>
+              <span class="px-2.5 py-1 text-xs text-gray-400 rounded" style="background:rgba(255,255,255,0.06);">Hyderabad</span>
+              <span class="px-2.5 py-1 text-xs text-gray-400 rounded" style="background:rgba(255,255,255,0.06);">Pune</span>
+              <span class="px-2.5 py-1 text-xs text-gray-400 rounded" style="background:rgba(255,255,255,0.06);">Vijayawada</span>
+              <span class="px-2.5 py-1 text-xs text-gray-400 rounded" style="background:rgba(255,255,255,0.06);">Visakhapatnam</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4" style="border-color:rgba(255,255,255,0.08);">
+        <p class="text-gray-500 text-sm">© 2025 Sanbay Networks Pvt. Ltd. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy.html" class="text-gray-500 text-sm hover:text-[#F57C00] transition-colors duration-200">Privacy Policy</a>
+          <span class="text-gray-700">·</span>
+          <a href="terms.html" class="text-gray-500 text-sm hover:text-[#F57C00] transition-colors duration-200">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobBtn = document.getElementById('mob-btn');
+    const mobMenu = document.getElementById('mob-menu');
+    const menuIco = document.getElementById('menu-ico');
+    const closeIco = document.getElementById('close-ico');
+    mobBtn.addEventListener('click', () => {
+      const open = !mobMenu.classList.contains('hidden');
+      mobMenu.classList.toggle('hidden');
+      menuIco.classList.toggle('hidden', !open);
+      closeIco.classList.toggle('hidden', open);
+    });
+  </script>
+</body>
+</html>
