@@ -59,6 +59,15 @@
       .service-card:hover { transform: none; }
     }
 
+    /* ── Awards Ticker ── */
+    .awards-ticker-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: tickerScroll 60s linear infinite;
+    }
+    .awards-ticker-track:hover { animation-play-state: paused; }
+
     /* ── Stats Ticker (InfiniteSlider port) ── */
     @keyframes tickerScroll {
       0%   { transform: translateX(0); }
@@ -602,6 +611,220 @@
           <div class="text-xs text-gray-400">Research & Education</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- AWARDS & RECOGNITION — Deep Navy bg per brand guidelines -->
+  <section class="bg-[#062A4F] py-20 relative overflow-hidden">
+
+    <!-- Subtle radial glow -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(24,74,157,0.12) 0%, transparent 65%);pointer-events:none;"></div>
+
+    <!-- Section header -->
+    <div class="relative z-10 text-center mb-14 px-6">
+      <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">Awards & Recognition</h2>
+      <p style="color:rgba(255,255,255,0.5);max-width:540px;margin:0 auto;font-size:1rem;line-height:1.7;">
+        Recognised by India's most respected technology brands for excellence, partnership and innovation.
+      </p>
+    </div>
+
+    <!-- ProgressiveBlur LEFT -->
+    <div style="position:absolute;left:0;top:0;bottom:0;width:200px;z-index:10;pointer-events:none;
+      background:linear-gradient(to right,#062A4F 0%,rgba(6,42,79,0.9) 40%,rgba(6,42,79,0.5) 70%,transparent 100%);"></div>
+    <!-- ProgressiveBlur RIGHT -->
+    <div style="position:absolute;right:0;top:0;bottom:0;width:200px;z-index:10;pointer-events:none;
+      background:linear-gradient(to left,#062A4F 0%,rgba(6,42,79,0.9) 40%,rgba(6,42,79,0.5) 70%,transparent 100%);"></div>
+
+    <!-- Infinite awards strip -->
+    <div style="overflow:hidden;width:100%;position:relative;">
+      <div class="awards-ticker-track">
+
+        <!-- ── SET 1 ── -->
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-1.png" alt="AMD Achievers Club — Cape Town" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-2.png" alt="HP Achiever's Award — Emerging Star Partner" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-3.png" alt="HPE Intel — Pathfinder H2 FY16" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-4.png" alt="HPE Intel Microsoft — Best Performer Q4 FY18" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-5.png" alt="RP Assist Partner Excellence Award" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-6.png" alt="All India Achievers Award — Outstanding Achievement" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-7.png" alt="AMD Achievers Club — Bari" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-8.png" alt="AMD Achievers Club — EPIC Edition" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-9.png" alt="HP Ignite Partner Meet — Overall WKS Performance" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-10.png" alt="Iris Award — Business Excellence" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-11.png" alt="HP Best Transaction Business Partner Q1'18" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-12.png" alt="HPE GreenLake Champion FY19 — South 1" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-13.png" alt="HPE Aruba — Accelerating Next FY2023" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-14.png" alt="HP Emerging Elite Partner Award" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-15.png" alt="HP AMD MOQ RD Meet 2023 — Best AMD NB Partner" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-16.png" alt="Mahatma Gandhi Leadership Award — Oxford University 2024" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+        <!-- ── SET 2 (duplicate for seamless -50% loop) ── -->
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-1.png" alt="AMD Achievers Club — Cape Town" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-2.png" alt="HP Achiever's Award" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-3.png" alt="HPE Intel Pathfinder" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-4.png" alt="HPE Best Performer" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-5.png" alt="RP Assist Partner Excellence" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-6.png" alt="All India Achievers Award" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-7.png" alt="AMD Achievers Club Bari" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-8.png" alt="AMD Achievers Club EPIC" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-9.png" alt="HP Ignite WKS Performance" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-10.png" alt="Iris Award Business Excellence" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-11.png" alt="HP Best Transaction Business Partner" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-12.png" alt="HPE GreenLake Champion" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-13.png" alt="HPE Aruba Accelerating Next" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-14.png" alt="HP Emerging Elite Partner" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-15.png" alt="HP AMD Best NB Partner" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+        <div style="flex-shrink:0;padding:0 14px;">
+          <div style="background:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.15);border-radius:14px;width:160px;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;">
+            <img src="brand_assets/award-16.png" alt="Mahatma Gandhi Leadership Award Oxford" style="height:165px;width:136px;object-fit:contain;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Award count badge -->
+    <div class="relative z-10 text-center mt-10">
+      <span style="font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);">16 Awards &amp; Counting</span>
     </div>
   </section>
 
