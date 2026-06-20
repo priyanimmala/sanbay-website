@@ -19,6 +19,21 @@
     .svc-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(24,74,157,0.13); border-color: rgba(24,74,157,0.25); }
     @media (prefers-reduced-motion: reduce) { .svc-card:hover { transform: none; } }
 
+    /* ── Service banner graphics (circuit pattern + icon watermark) ── */
+    .circuit-bg {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath d='M0 20H40V60H100' stroke='%23F57C00' stroke-width='1' fill='none' opacity='0.6'/%3E%3Cpath d='M20 0V40H60V100' stroke='%2390BDD9' stroke-width='1' fill='none' opacity='0.45'/%3E%3Ccircle cx='40' cy='60' r='2.2' fill='%23F57C00'/%3E%3Ccircle cx='60' cy='40' r='2.2' fill='%2390BDD9'/%3E%3C/svg%3E");
+      background-size: 90px 90px;
+      position: absolute; inset: 0;
+    }
+    .svc-banner { position: relative; height: 190px; overflow: hidden; }
+    .svc-banner-icon { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none; }
+    .svc-banner-fade { position: absolute; inset: 0; }
+    .svc-banner-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 24px 36px; max-width: 620px; }
+    .svc-tag { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #F57C00; margin-bottom: 8px; display: block; }
+    .svc-headline { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; line-height: 1.25; color: #fff; text-transform: uppercase; letter-spacing: -0.01em; margin: 0; }
+    .svc-headline em { color: #F57C00; font-style: normal; }
+    .svc-subtext { color: rgba(255,255,255,0.65); font-size: 0.85rem; margin-top: 8px; font-family: 'Inter', sans-serif; }
+
     /* ── Dropdown Nav (Microworld-inspired) ── */
     .nav-link { font-family:'Montserrat',sans-serif; font-size:0.875rem; font-weight:500; color:#5E6774; transition:color 0.2s ease; cursor:pointer; background:none; border:none; }
     .nav-link:hover, .nav-link.active { color:#184A9D; }
@@ -209,27 +224,20 @@
       <div class="space-y-8">
 
         <!-- Service 1: End-Point Devices -->
-        <div id="endpoint-devices" class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
-          <div class="bg-[#062A4F] p-8 flex flex-col justify-between relative overflow-hidden">
-            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
-            <div>
-              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">End-Point Devices</h3>
-              <p class="text-blue-200 text-sm">Laptops · Desktops · Workstations</p>
-            </div>
-            <div class="mt-6">
-              <div class="text-xs text-gray-400 uppercase tracking-widest mb-2">Vendors</div>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.1);">HP</span>
-                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.1);">AMD</span>
-              </div>
+        <div id="endpoint-devices" class="svc-card border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
+          <div class="svc-banner" style="background:linear-gradient(120deg,#062A4F 0%,#184A9D 100%);">
+            <div class="circuit-bg"></div>
+            <div class="svc-banner-icon"><svg width="170" height="170" fill="none" stroke="white" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+            <div class="svc-banner-fade" style="background:linear-gradient(90deg,rgba(6,42,79,0.9) 0%,rgba(6,42,79,0.55) 55%,transparent 100%);"></div>
+            <div class="svc-banner-content">
+              <span class="svc-tag">End-Point Devices</span>
+              <h3 class="svc-headline">Equip Your Team With <em>Reliable Devices</em></h3>
+              <p class="svc-subtext">Laptops · Desktops · Workstations · Printers · Thin Clients · VDI Solutions</p>
             </div>
           </div>
-          <div class="lg:col-span-2 p-8">
+          <div class="p-8">
             <p class="text-[#5E6774] leading-relaxed mb-6">Our IT Infrastructure services include optimizing endpoint devices to ensure seamless integration with your network, enhancing overall operational efficiency.</p>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Laptops</div></div>
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Desktops</div></div>
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Work-Stations</div></div>
@@ -237,32 +245,25 @@
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Thin Clients</div></div>
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">VDI Solutions</div></div>
             </div>
+            <div class="flex flex-wrap gap-2"><span class="text-xs text-gray-400 uppercase tracking-widest mr-1">Vendors</span><span class="px-2.5 py-1 text-xs font-medium text-[#184A9D] rounded" style="background:rgba(24,74,157,0.08);">HP</span><span class="px-2.5 py-1 text-xs font-medium text-[#184A9D] rounded" style="background:rgba(24,74,157,0.08);">AMD</span></div>
           </div>
         </div>
 
         <!-- Service 2: Enterprise Solutions -->
-        <div id="enterprise-solutions" class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
-          <div class="bg-[#184A9D] p-8 flex flex-col justify-between relative overflow-hidden">
-            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
-            <div>
-              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="6" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Enterprise Solutions</h3>
-              <p class="text-blue-200 text-sm">Server · Storage · HCI · DC/DR</p>
-            </div>
-            <div class="mt-6">
-              <div class="text-xs text-gray-300 uppercase tracking-widest mb-2">Vendors</div>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">HPE</span>
-                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">Nutanix</span>
-                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">VMware</span>
-              </div>
+        <div id="enterprise-solutions" class="svc-card border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
+          <div class="svc-banner" style="background:linear-gradient(120deg,#184A9D 0%,#062A4F 100%);">
+            <div class="circuit-bg"></div>
+            <div class="svc-banner-icon"><svg width="170" height="170" fill="none" stroke="white" stroke-width="1" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div>
+            <div class="svc-banner-fade" style="background:linear-gradient(90deg,rgba(6,42,79,0.9) 0%,rgba(24,74,157,0.55) 55%,transparent 100%);"></div>
+            <div class="svc-banner-content">
+              <span class="svc-tag">Enterprise Solutions</span>
+              <h3 class="svc-headline">Build Infrastructure That <em>Scales With You</em></h3>
+              <p class="svc-subtext">Server · Storage · HCI · Virtualization · DC & DR Solutions</p>
             </div>
           </div>
-          <div class="lg:col-span-2 p-8">
+          <div class="p-8">
             <p class="text-[#5E6774] leading-relaxed mb-6">We design, implement, and manage end-to-end infrastructure solutions — from robust network architectures to hybrid cloud systems — that form the backbone of your digital operations.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Server</div></div>
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Storage</div></div>
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Hyper Converged Infrastructure</div></div>
@@ -271,22 +272,23 @@
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">DC & DR Solutions</div></div>
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Data Back-Up & Recovery</div></div>
             </div>
+            <div class="flex flex-wrap gap-2"><span class="text-xs text-gray-400 uppercase tracking-widest mr-1">Vendors</span><span class="px-2.5 py-1 text-xs font-medium text-[#184A9D] rounded" style="background:rgba(24,74,157,0.08);">HPE</span><span class="px-2.5 py-1 text-xs font-medium text-[#184A9D] rounded" style="background:rgba(24,74,157,0.08);">Nutanix</span><span class="px-2.5 py-1 text-xs font-medium text-[#184A9D] rounded" style="background:rgba(24,74,157,0.08);">VMware</span></div>
           </div>
         </div>
 
         <!-- Service 3: Network Solutions -->
-        <div id="network-solutions" class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
-          <div class="bg-[#062A4F] p-8 flex flex-col justify-between relative overflow-hidden">
-            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
-            <div>
-              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16"/><line x1="12" y1="8" x2="18.5" y2="16"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Network Solutions</h3>
-              <p class="text-blue-200 text-sm">Wired · Wireless · SD-WAN</p>
+        <div id="network-solutions" class="svc-card border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
+          <div class="svc-banner" style="background:linear-gradient(120deg,#062A4F 0%,#184A9D 100%);">
+            <div class="circuit-bg"></div>
+            <div class="svc-banner-icon"><svg width="170" height="170" fill="none" stroke="white" stroke-width="1" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16"/><line x1="12" y1="8" x2="18.5" y2="16"/></svg></div>
+            <div class="svc-banner-fade" style="background:linear-gradient(90deg,rgba(6,42,79,0.9) 0%,rgba(6,42,79,0.55) 55%,transparent 100%);"></div>
+            <div class="svc-banner-content">
+              <span class="svc-tag">Network Solutions</span>
+              <h3 class="svc-headline">Stay Connected, <em>Stay Ahead</em></h3>
+              <p class="svc-subtext">Wired Switches · Wireless · SD-WAN Solutions</p>
             </div>
           </div>
-          <div class="lg:col-span-2 p-8">
+          <div class="p-8">
             <p class="text-[#5E6774] leading-relaxed mb-6">We provide a wide range of network solutions tailored to meet the diverse needs of businesses, ensuring seamless connectivity and efficient data transfer.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Wired Switches</div></div>
@@ -297,18 +299,18 @@
         </div>
 
         <!-- Service 4: Firewall & Security Solutions -->
-        <div id="firewall-security" class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
-          <div class="bg-[#184A9D] p-8 flex flex-col justify-between relative overflow-hidden">
-            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
-            <div>
-              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Firewall & Security Solutions</h3>
-              <p class="text-blue-200 text-sm">Network · End-Point Protection</p>
+        <div id="firewall-security" class="svc-card border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
+          <div class="svc-banner" style="background:linear-gradient(120deg,#184A9D 0%,#062A4F 100%);">
+            <div class="circuit-bg"></div>
+            <div class="svc-banner-icon"><svg width="170" height="170" fill="none" stroke="white" stroke-width="1" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="svc-banner-fade" style="background:linear-gradient(90deg,rgba(6,42,79,0.9) 0%,rgba(24,74,157,0.55) 55%,transparent 100%);"></div>
+            <div class="svc-banner-content">
+              <span class="svc-tag">Firewall & Security Solutions</span>
+              <h3 class="svc-headline">Secure Your Business With <em>Confidence</em></h3>
+              <p class="svc-subtext">Protect your data and your customers</p>
             </div>
           </div>
-          <div class="lg:col-span-2 p-8">
+          <div class="p-8">
             <p class="text-[#5E6774] leading-relaxed mb-6">Protect your digital environment with our firewall and security solutions, delivering strong defense for your organization's most critical assets.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Network Security Solutions</div></div>
@@ -319,18 +321,18 @@
         </div>
 
         <!-- Service 5: Hybrid Workspace Solutions -->
-        <div id="hybrid-workspace" class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
-          <div class="bg-[#062A4F] p-8 flex flex-col justify-between relative overflow-hidden">
-            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
-            <div>
-              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Hybrid Workspace Solutions</h3>
-              <p class="text-blue-200 text-sm">Headsets · Conferencing · AV</p>
+        <div id="hybrid-workspace" class="svc-card border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
+          <div class="svc-banner" style="background:linear-gradient(120deg,#062A4F 0%,#184A9D 100%);">
+            <div class="circuit-bg"></div>
+            <div class="svc-banner-icon"><svg width="170" height="170" fill="none" stroke="white" stroke-width="1" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="svc-banner-fade" style="background:linear-gradient(90deg,rgba(6,42,79,0.9) 0%,rgba(6,42,79,0.55) 55%,transparent 100%);"></div>
+            <div class="svc-banner-content">
+              <span class="svc-tag">Hybrid Workspace Solutions</span>
+              <h3 class="svc-headline">Empower Hybrid <em>Collaboration</em></h3>
+              <p class="svc-subtext">Next Gen Headsets · Conference Rooms · Video Conferencing</p>
             </div>
           </div>
-          <div class="lg:col-span-2 p-8">
+          <div class="p-8">
             <p class="text-[#5E6774] leading-relaxed mb-6">Embrace the future of work with our Hybrid Workspace solutions, crafted to empower organizations in navigating the evolving dynamics of remote and on-site collaboration.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Next Gen Headsets</div></div>
@@ -341,18 +343,18 @@
         </div>
 
         <!-- Service 6: Project Management -->
-        <div id="project-management" class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
-          <div class="bg-[#184A9D] p-8 flex flex-col justify-between relative overflow-hidden">
-            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
-            <div>
-              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Project Management</h3>
-              <p class="text-blue-200 text-sm">NW · AV · CCTV · Access Control</p>
+        <div id="project-management" class="svc-card border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
+          <div class="svc-banner" style="background:linear-gradient(120deg,#184A9D 0%,#062A4F 100%);">
+            <div class="circuit-bg"></div>
+            <div class="svc-banner-icon"><svg width="170" height="170" fill="none" stroke="white" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></div>
+            <div class="svc-banner-fade" style="background:linear-gradient(90deg,rgba(6,42,79,0.9) 0%,rgba(24,74,157,0.55) 55%,transparent 100%);"></div>
+            <div class="svc-banner-content">
+              <span class="svc-tag">Project Management</span>
+              <h3 class="svc-headline">Delivered On Time, <em>Built to Last</em></h3>
+              <p class="svc-subtext">Passive NW · Audio/Video · CCTV · Access Control</p>
             </div>
           </div>
-          <div class="lg:col-span-2 p-8">
+          <div class="p-8">
             <p class="text-[#5E6774] leading-relaxed mb-6">From passive network (NW) projects that ensure seamless connectivity to advanced audio-visual (AV) solutions that transform your spaces, we specialize in delivering state-of-the-art CCTV systems to safeguard your premises.</p>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">Passive NW Projects</div></div>
@@ -365,18 +367,18 @@
         </div>
 
         <!-- Service 7: IT Services -->
-        <div id="it-services" class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
-          <div class="bg-[#062A4F] p-8 flex flex-col justify-between relative overflow-hidden">
-            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
-            <div>
-              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">IT Services</h3>
-              <p class="text-blue-200 text-sm">AMC · MPS · Managed · Field</p>
+        <div id="it-services" class="svc-card border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
+          <div class="svc-banner" style="background:linear-gradient(120deg,#062A4F 0%,#184A9D 100%);">
+            <div class="circuit-bg"></div>
+            <div class="svc-banner-icon"><svg width="170" height="170" fill="none" stroke="white" stroke-width="1" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+            <div class="svc-banner-fade" style="background:linear-gradient(90deg,rgba(6,42,79,0.9) 0%,rgba(6,42,79,0.55) 55%,transparent 100%);"></div>
+            <div class="svc-banner-content">
+              <span class="svc-tag">IT Services</span>
+              <h3 class="svc-headline">Keep Your Business <em>Running Smoothly</em></h3>
+              <p class="svc-subtext">AMC · Managed Print · Managed IT · Field Services</p>
             </div>
           </div>
-          <div class="lg:col-span-2 p-8">
+          <div class="p-8">
             <p class="text-[#5E6774] leading-relaxed mb-6">We provide a comprehensive suite of IT services designed to boost productivity, streamline operations, and foster growth.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="flex items-start gap-3">
@@ -400,30 +402,25 @@
         </div>
 
         <!-- Service 8: Financing Solutions -->
-        <div id="financing-solutions" class="svc-card grid grid-cols-1 lg:grid-cols-3 gap-0 border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
-          <div class="bg-[#184A9D] p-8 flex flex-col justify-between relative overflow-hidden">
-            <div style="position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.1;right:-60px;bottom:-60px;"></div>
-            <div>
-              <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-[#F57C00]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2.5-5 2-5 4.5a2.5 2.5 0 0 0 5 0"/><line x1="12" y1="6" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="18"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Financing Solutions</h3>
-              <p class="text-blue-200 text-sm">IT Hardware Leasing</p>
-            </div>
-            <div class="mt-6">
-              <div class="text-xs text-gray-300 uppercase tracking-widest mb-2">Partner</div>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-0.5 text-xs text-blue-200 rounded" style="background:rgba(255,255,255,0.15);">HP Amplify Power CDR</span>
-              </div>
+        <div id="financing-solutions" class="svc-card border border-gray-100 rounded-xl overflow-hidden cursor-default" style="box-shadow:0 2px 16px rgba(6,42,79,0.06);scroll-margin-top:90px;">
+          <div class="svc-banner" style="background:linear-gradient(120deg,#184A9D 0%,#062A4F 100%);">
+            <div class="circuit-bg"></div>
+            <div class="svc-banner-icon"><svg width="170" height="170" fill="none" stroke="white" stroke-width="1" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2.5-5 2-5 4.5a2.5 2.5 0 0 0 5 0"/><line x1="12" y1="6" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="18"/></svg></div>
+            <div class="svc-banner-fade" style="background:linear-gradient(90deg,rgba(6,42,79,0.9) 0%,rgba(24,74,157,0.55) 55%,transparent 100%);"></div>
+            <div class="svc-banner-content">
+              <span class="svc-tag">Financing Solutions</span>
+              <h3 class="svc-headline">Get the Latest Tech, <em>Own Less</em></h3>
+              <p class="svc-subtext">Flexible IT hardware leasing solutions</p>
             </div>
           </div>
-          <div class="lg:col-span-2 p-8">
+          <div class="p-8">
             <p class="text-[#5E6774] leading-relaxed mb-6">In the rapidly evolving world of Information Technology, staying ahead means having the right tools readily available. Our IT hardware leasing solutions provide a strategic advantage, giving you access to the latest equipment without the burden of ownership costs.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">IT Hardware Leasing</div></div>
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">OPEX-Friendly Model</div></div>
               <div class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F57C00] mt-2 shrink-0"></div><div class="font-semibold text-[#062A4F] text-sm">No Ownership Burden</div></div>
             </div>
+            <div class="flex flex-wrap gap-2"><span class="text-xs text-gray-400 uppercase tracking-widest mr-1">Partner</span><span class="px-2.5 py-1 text-xs font-medium text-[#184A9D] rounded" style="background:rgba(24,74,157,0.08);">HP Amplify Power CDR</span></div>
           </div>
         </div>
 

@@ -78,6 +78,27 @@
 
     .industry-card { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
 
+    /* ── "Our Expertise" style cards (Products & Services, circuit pattern + dark gradient) ── */
+    .circuit-bg-home {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath d='M0 20H40V60H100' stroke='%23F57C00' stroke-width='1' fill='none' opacity='0.6'/%3E%3Cpath d='M20 0V40H60V100' stroke='%2390BDD9' stroke-width='1' fill='none' opacity='0.45'/%3E%3Ccircle cx='40' cy='60' r='2.2' fill='%23F57C00'/%3E%3Ccircle cx='60' cy='40' r='2.2' fill='%2390BDD9'/%3E%3C/svg%3E");
+      background-size: 90px 90px;
+      position: absolute; inset: 0; opacity: 0.4;
+    }
+    .expertise-card {
+      position: relative; display: block; border-radius: 14px; overflow: hidden;
+      min-height: 270px; padding: 28px; text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .expertise-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(6,42,79,0.32); }
+    @media (prefers-reduced-motion: reduce) { .expertise-card:hover { transform: none; } }
+    .expertise-icon { position: relative; z-index: 2; width: 52px; height: 52px; border-radius: 12px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+    .expertise-icon svg { width: 26px; height: 26px; color: #F57C00; }
+    .expertise-content { position: relative; z-index: 2; }
+    .expertise-content h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
+    .expertise-content p { color: rgba(255,255,255,0.65); font-size: 0.85rem; line-height: 1.6; margin-bottom: 18px; }
+    .expertise-link { display: inline-flex; align-items: center; gap: 6px; color: #F57C00; font-size: 0.8125rem; font-weight: 600; font-family: 'Montserrat', sans-serif; transition: gap 0.2s ease; }
+    .expertise-card:hover .expertise-link { gap: 10px; }
+
     @media (prefers-reduced-motion: reduce) {
       .service-card:hover { transform: none; }
     }
@@ -272,60 +293,25 @@
     </div>
   </nav>
 
-  <!-- HERO — Geometric Animation (ported from HeroGeometric component) -->
+  <!-- HERO — Video Background (matches microworldinfosol pattern) -->
   <section class="relative min-h-screen bg-[#062A4F] flex items-center justify-center overflow-hidden">
 
-    <!-- Background gradient (component: from-indigo→rose → Sanbay blue→orange) -->
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 25% 60%, rgba(24,74,157,0.1) 0%, transparent 55%), radial-gradient(ellipse at 80% 40%, rgba(245,124,0,0.07) 0%, transparent 55%);filter:blur(40px);pointer-events:none;"></div>
+    <!-- Background video -->
+    <video autoplay muted loop playsinline preload="auto" poster="brand_assets/header-video-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      <source src="brand_assets/header-video.mp4" type="video/mp4">
+    </video>
 
-    <!-- ── Floating geometric shapes (ElegantShape) ── -->
-    <div style="position:absolute;inset:0;overflow:hidden;">
+    <!-- Base navy tint — unifies video tone with Sanbay brand, ensures legibility on every frame -->
+    <div style="position:absolute;inset:0;background:rgba(6,42,79,0.58);z-index:1;pointer-events:none;"></div>
 
-      <!-- Shape 1 · large · Sanbay Blue · top-left · rotate 12° -->
-      <div style="position:absolute;left:-5%;top:20%;transform:rotate(12deg);">
-        <div class="shape-entrance" style="--delay:0.3s;">
-          <div class="sf" style="width:600px;height:140px;position:relative;">
-            <div style="position:absolute;inset:0;border-radius:9999px;background:linear-gradient(90deg,rgba(24,74,157,0.22) 0%,transparent 100%);border:2px solid rgba(255,255,255,0.13);backdrop-filter:blur(2px);box-shadow:0 8px 32px rgba(24,74,157,0.15);"></div>
-          </div>
-        </div>
-      </div>
+    <!-- Vignette concentrated behind text for guaranteed contrast regardless of video content -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 75% 65% at 50% 48%, rgba(6,42,79,0.55) 0%, rgba(6,42,79,0.2) 65%, transparent 100%);z-index:1;pointer-events:none;"></div>
 
-      <!-- Shape 2 · medium · Sanbay Orange · bottom-right · rotate -15° -->
-      <div style="position:absolute;right:0%;top:72%;transform:rotate(-15deg);">
-        <div class="shape-entrance" style="--delay:0.5s;">
-          <div class="sf-2" style="width:500px;height:120px;position:relative;">
-            <div style="position:absolute;inset:0;border-radius:9999px;background:linear-gradient(90deg,rgba(245,124,0,0.2) 0%,transparent 100%);border:2px solid rgba(255,255,255,0.1);backdrop-filter:blur(2px);box-shadow:0 8px 32px rgba(245,124,0,0.1);"></div>
-          </div>
-        </div>
-      </div>
+    <!-- Brand color wash tying video to Sanbay palette -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 82% 25%, rgba(245,124,0,0.1) 0%, transparent 50%), radial-gradient(ellipse at 12% 80%, rgba(24,74,157,0.18) 0%, transparent 55%);z-index:1;pointer-events:none;"></div>
 
-      <!-- Shape 3 · small · Sanbay Blue · bottom-left · rotate -8° -->
-      <div style="position:absolute;left:10%;bottom:10%;transform:rotate(-8deg);">
-        <div class="shape-entrance" style="--delay:0.4s;">
-          <div class="sf-3" style="width:300px;height:80px;position:relative;">
-            <div style="position:absolute;inset:0;border-radius:9999px;background:linear-gradient(90deg,rgba(24,74,157,0.16) 0%,transparent 100%);border:2px solid rgba(255,255,255,0.1);backdrop-filter:blur(2px);"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Shape 4 · small · Sanbay Orange · top-right · rotate 20° -->
-      <div style="position:absolute;right:20%;top:14%;transform:rotate(20deg);">
-        <div class="shape-entrance" style="--delay:0.6s;">
-          <div class="sf-4" style="width:200px;height:60px;position:relative;">
-            <div style="position:absolute;inset:0;border-radius:9999px;background:linear-gradient(90deg,rgba(245,124,0,0.16) 0%,transparent 100%);border:2px solid rgba(255,255,255,0.1);backdrop-filter:blur(2px);"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Shape 5 · tiny · Sanbay Blue · top-center · rotate -25° -->
-      <div style="position:absolute;left:25%;top:9%;transform:rotate(-25deg);">
-        <div class="shape-entrance" style="--delay:0.7s;">
-          <div class="sf-5" style="width:150px;height:40px;position:relative;">
-            <div style="position:absolute;inset:0;border-radius:9999px;background:linear-gradient(90deg,rgba(24,74,157,0.13) 0%,transparent 100%);border:2px solid rgba(255,255,255,0.08);backdrop-filter:blur(2px);"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Top fade — smooths transition under the fixed navbar -->
+    <div style="position:absolute;top:0;left:0;right:0;height:160px;background:linear-gradient(to bottom,rgba(6,42,79,0.85) 0%,transparent 100%);z-index:1;pointer-events:none;"></div>
 
     <!-- ── Hero content (centered, matches component layout) ── -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-10 pt-24">
@@ -388,8 +374,8 @@
       </div>
     </div>
 
-    <!-- Top/bottom fade overlay (component: bg-gradient-to-t from-[#030303] → Sanbay navy) -->
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,#062A4F 0%,transparent 22%,rgba(6,42,79,0.75) 100%);pointer-events:none;"></div>
+    <!-- Bottom fade — transitions video into the solid navy stats strip below -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,#062A4F 0%,transparent 20%,transparent 78%,rgba(6,42,79,0.7) 100%);z-index:1;pointer-events:none;"></div>
   </section>
 
   <!-- STATS STRIP — InfiniteSlider + ProgressiveBlur (bg synced with hero) -->
@@ -489,77 +475,85 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+        <a href="services.html#endpoint-devices" class="expertise-card" style="background:linear-gradient(145deg,#062A4F 0%,#184A9D 100%);">
+          <div class="circuit-bg-home"></div>
+          <div class="expertise-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+          <div class="expertise-content">
+            <h3>End-Point Devices</h3>
+            <p>Laptops, desktops, workstations, printers, thin clients and VDI solutions from HP and AMD.</p>
+            <span class="expertise-link">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">End-Point Devices</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Laptops, desktops, workstations, printers, thin clients and VDI solutions from HP and AMD.</p>
-          <a href="services.html#endpoint-devices" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
+        </a>
 
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="6" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
+        <a href="services.html#enterprise-solutions" class="expertise-card" style="background:linear-gradient(145deg,#184A9D 0%,#062A4F 100%);">
+          <div class="circuit-bg-home"></div>
+          <div class="expertise-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="6" cy="18" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <div class="expertise-content">
+            <h3>Enterprise Solutions</h3>
+            <p>Server, storage, hyper-converged infrastructure, virtualization and DC/DR solutions from HPE, Nutanix and VMware.</p>
+            <span class="expertise-link">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Enterprise Solutions</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Server, storage, hyper-converged infrastructure, virtualization and DC/DR solutions from HPE, Nutanix and VMware.</p>
-          <a href="services.html#enterprise-solutions" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
+        </a>
 
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16"/><line x1="12" y1="8" x2="18.5" y2="16"/></svg>
+        <a href="services.html#network-solutions" class="expertise-card" style="background:linear-gradient(145deg,#062A4F 0%,#184A9D 100%);">
+          <div class="circuit-bg-home"></div>
+          <div class="expertise-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16"/><line x1="12" y1="8" x2="18.5" y2="16"/></svg></div>
+          <div class="expertise-content">
+            <h3>Network Solutions</h3>
+            <p>Wired switches, wireless and SD-WAN solutions ensuring seamless connectivity and efficient data transfer.</p>
+            <span class="expertise-link">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Network Solutions</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Wired switches, wireless and SD-WAN solutions ensuring seamless connectivity and efficient data transfer.</p>
-          <a href="services.html#network-solutions" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
+        </a>
 
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <a href="services.html#firewall-security" class="expertise-card" style="background:linear-gradient(145deg,#184A9D 0%,#062A4F 100%);">
+          <div class="circuit-bg-home"></div>
+          <div class="expertise-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="expertise-content">
+            <h3>Firewall & Security Solutions</h3>
+            <p>Network security, end-point security and cyber security solutions defending your most critical assets.</p>
+            <span class="expertise-link">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Firewall & Security Solutions</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Network security, end-point security and cyber security solutions defending your most critical assets.</p>
-          <a href="services.html#firewall-security" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
+        </a>
 
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <a href="services.html#hybrid-workspace" class="expertise-card" style="background:linear-gradient(145deg,#062A4F 0%,#184A9D 100%);">
+          <div class="circuit-bg-home"></div>
+          <div class="expertise-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="expertise-content">
+            <h3>Hybrid Workspace Solutions</h3>
+            <p>Next gen headsets, conference room solutions and video conferencing for hybrid collaboration.</p>
+            <span class="expertise-link">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Hybrid Workspace Solutions</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Next gen headsets, conference room solutions and video conferencing for hybrid collaboration.</p>
-          <a href="services.html#hybrid-workspace" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
+        </a>
 
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
+        <a href="services.html#project-management" class="expertise-card" style="background:linear-gradient(145deg,#184A9D 0%,#062A4F 100%);">
+          <div class="circuit-bg-home"></div>
+          <div class="expertise-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></div>
+          <div class="expertise-content">
+            <h3>Project Management</h3>
+            <p>Passive NW projects, audio/video solutions, CCTV, public address systems and access control.</p>
+            <span class="expertise-link">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Project Management</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Passive NW projects, audio/video solutions, CCTV, public address systems and access control.</p>
-          <a href="services.html#project-management" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
+        </a>
 
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        <a href="services.html#it-services" class="expertise-card" style="background:linear-gradient(145deg,#062A4F 0%,#184A9D 100%);">
+          <div class="circuit-bg-home"></div>
+          <div class="expertise-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+          <div class="expertise-content">
+            <h3>IT Services</h3>
+            <p>Annual maintenance contracts, managed print services, managed IT and field services support.</p>
+            <span class="expertise-link">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">IT Services</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Annual maintenance contracts, managed print services, managed IT and field services support.</p>
-          <a href="services.html#it-services" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
+        </a>
 
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2.5-5 2-5 4.5a2.5 2.5 0 0 0 5 0"/><line x1="12" y1="6" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="18"/></svg>
+        <a href="services.html#financing-solutions" class="expertise-card" style="background:linear-gradient(145deg,#184A9D 0%,#062A4F 100%);">
+          <div class="circuit-bg-home"></div>
+          <div class="expertise-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2.5-5 2-5 4.5a2.5 2.5 0 0 0 5 0"/><line x1="12" y1="6" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="18"/></svg></div>
+          <div class="expertise-content">
+            <h3>Financing Solutions</h3>
+            <p>IT hardware leasing solutions giving you access to the latest equipment without the burden of ownership costs.</p>
+            <span class="expertise-link">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Financing Solutions</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">IT hardware leasing solutions giving you access to the latest equipment without the burden of ownership costs.</p>
-          <a href="services.html#financing-solutions" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
+        </a>
 
       </div>
       <div class="mt-12 text-center">
