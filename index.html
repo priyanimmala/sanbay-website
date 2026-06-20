@@ -99,6 +99,18 @@
     .expertise-link { display: inline-flex; align-items: center; gap: 6px; color: #F57C00; font-size: 0.8125rem; font-weight: 600; font-family: 'Montserrat', sans-serif; transition: gap 0.2s ease; }
     .expertise-card:hover .expertise-link { gap: 10px; }
 
+    /* ── Brand/Client logo dual-row scroller (microworldinfosol-style) ── */
+    .logo-row { position: relative; overflow: hidden; }
+    .logo-track { display: flex; align-items: center; width: max-content; }
+    .logo-track:hover { animation-play-state: paused; }
+    .logo-track-right { animation: logoScrollRight 50s linear infinite; }
+    .logo-track-left { animation: logoScrollLeft 65s linear infinite; }
+    @keyframes logoScrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    @keyframes logoScrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .logo-track-right, .logo-track-left { animation: none; } }
+    .logo-card { flex-shrink: 0; width: 170px; height: 100px; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(6,42,79,0.07); display: flex; align-items: center; justify-content: center; padding: 16px; margin: 0 10px; }
+    .logo-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
     @media (prefers-reduced-motion: reduce) {
       .service-card:hover { transform: none; }
     }
@@ -693,54 +705,87 @@
     </div>
   </section>
 
-  <!-- PARTNERS -->
+  <!-- BRAND & CLIENT LOGOS — dual-row scroll (microworldinfosol-style) -->
   <section class="bg-[#F5F7FA] py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-2xl font-bold text-[#062A4F] mb-3">Backed by the World's Leading Technology Brands</h2>
-        <p class="text-[#5E6774] text-sm">Certified partnerships ensuring the best — backed, validated and supported.</p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 items-center">
-        <div class="partner-logo flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-pointer" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-gray-500 text-lg" style="font-family:'Montserrat',sans-serif;">HP</span></div>
-        <div class="partner-logo flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-pointer" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-gray-500 text-sm" style="font-family:'Montserrat',sans-serif;">HPE</span></div>
-        <div class="partner-logo flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-pointer" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-gray-500 text-sm" style="font-family:'Montserrat',sans-serif;">VMware</span></div>
-        <div class="partner-logo flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-pointer" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-gray-500 text-xs" style="font-family:'Montserrat',sans-serif;">Microsoft</span></div>
-        <div class="partner-logo flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-pointer" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-gray-500 text-sm" style="font-family:'Montserrat',sans-serif;">AWS</span></div>
-        <div class="partner-logo flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-pointer" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-gray-500 text-xs" style="font-family:'Montserrat',sans-serif;">Nutanix</span></div>
-        <div class="partner-logo flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-pointer col-span-2 md:col-span-1" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-gray-500 text-xs" style="font-family:'Montserrat',sans-serif;">Red Hat</span></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-12">
+      <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
+      <h2 class="text-3xl font-bold text-[#062A4F] mb-3 tracking-tight">Backed by Global Brands, Trusted by India's Best</h2>
+      <p class="text-[#5E6774] text-sm max-w-xl mx-auto">Certified technology partnerships and long-standing client relationships across healthcare, government, education and enterprise.</p>
+    </div>
+
+    <!-- Row 1: Technology Partners — scrolls left → right -->
+    <div class="logo-row mb-5">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:120px;z-index:10;pointer-events:none;background:linear-gradient(to right,#F5F7FA 0%,transparent 100%);"></div>
+      <div style="position:absolute;right:0;top:0;bottom:0;width:120px;z-index:10;pointer-events:none;background:linear-gradient(to left,#F5F7FA 0%,transparent 100%);"></div>
+      <div class="logo-track logo-track-right">
+        <div class="logo-card"><img src="brand_assets/brand-5.webp" alt="HP"></div>
+        <div class="logo-card"><img src="brand_assets/brand-6.webp" alt="Hewlett Packard Enterprise"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-0.png" alt="HPE Aruba Networking"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND.png" alt="HP Amplify Power Services Partner"></div>
+        <div class="logo-card"><img src="brand_assets/brand-11.webp" alt="VMware"></div>
+        <div class="logo-card"><img src="brand_assets/brand-12.webp" alt="Microsoft"></div>
+        <div class="logo-card"><img src="brand_assets/brand-7.webp" alt="AWS"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-3.png" alt="Nutanix"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-4.png" alt="Red Hat Enterprise Linux"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-1.png" alt="CommScope"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-2.png" alt="ViewSonic"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-5.png" alt="Radware"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-6.png" alt="Microsoft Azure"></div>
+        <div class="logo-card"><img src="brand_assets/brand-5.webp" alt="HP"></div>
+        <div class="logo-card"><img src="brand_assets/brand-6.webp" alt="Hewlett Packard Enterprise"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-0.png" alt="HPE Aruba Networking"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND.png" alt="HP Amplify Power Services Partner"></div>
+        <div class="logo-card"><img src="brand_assets/brand-11.webp" alt="VMware"></div>
+        <div class="logo-card"><img src="brand_assets/brand-12.webp" alt="Microsoft"></div>
+        <div class="logo-card"><img src="brand_assets/brand-7.webp" alt="AWS"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-3.png" alt="Nutanix"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-4.png" alt="Red Hat Enterprise Linux"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-1.png" alt="CommScope"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-2.png" alt="ViewSonic"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-5.png" alt="Radware"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-6.png" alt="Microsoft Azure"></div>
       </div>
     </div>
-  </section>
 
-  <!-- CLIENTS -->
-  <section class="bg-white py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
-        <h2 class="text-3xl font-bold text-[#062A4F] mb-3">Trusted by India's Leading Organizations</h2>
-        <p class="text-[#5E6774] text-sm">From healthcare giants to space research institutions — Sanbay powers infrastructure at scale.</p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div class="p-5 border border-gray-100 rounded-lg text-center hover:border-[#184A9D]/30 hover:bg-[#F5F7FA] transition-all duration-200 cursor-pointer" style="box-shadow:0 1px 6px rgba(0,0,0,0.04);">
-          <div class="font-bold text-[#5E6774] text-sm mb-1">Dr. Reddy's</div>
-          <div class="text-xs text-gray-400">Pharmaceuticals</div>
-        </div>
-        <div class="p-5 border border-gray-100 rounded-lg text-center hover:border-[#184A9D]/30 hover:bg-[#F5F7FA] transition-all duration-200 cursor-pointer" style="box-shadow:0 1px 6px rgba(0,0,0,0.04);">
-          <div class="font-bold text-[#5E6774] text-sm mb-1">Apollo Hospitals</div>
-          <div class="text-xs text-gray-400">Healthcare</div>
-        </div>
-        <div class="p-5 border border-gray-100 rounded-lg text-center hover:border-[#184A9D]/30 hover:bg-[#F5F7FA] transition-all duration-200 cursor-pointer" style="box-shadow:0 1px 6px rgba(0,0,0,0.04);">
-          <div class="font-bold text-[#5E6774] text-sm mb-1">KIMS Hospitals</div>
-          <div class="text-xs text-gray-400">Healthcare</div>
-        </div>
-        <div class="p-5 border border-gray-100 rounded-lg text-center hover:border-[#184A9D]/30 hover:bg-[#F5F7FA] transition-all duration-200 cursor-pointer" style="box-shadow:0 1px 6px rgba(0,0,0,0.04);">
-          <div class="font-bold text-[#5E6774] text-sm mb-1">ISRO</div>
-          <div class="text-xs text-gray-400">Space Research</div>
-        </div>
-        <div class="p-5 border border-gray-100 rounded-lg text-center hover:border-[#184A9D]/30 hover:bg-[#F5F7FA] transition-all duration-200 cursor-pointer" style="box-shadow:0 1px 6px rgba(0,0,0,0.04);">
-          <div class="font-bold text-[#5E6774] text-sm mb-1">IISc Bangalore</div>
-          <div class="text-xs text-gray-400">Research & Education</div>
-        </div>
+    <!-- Row 2: Clients — scrolls right → left -->
+    <div class="logo-row">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:120px;z-index:10;pointer-events:none;background:linear-gradient(to right,#F5F7FA 0%,transparent 100%);"></div>
+      <div style="position:absolute;right:0;top:0;bottom:0;width:120px;z-index:10;pointer-events:none;background:linear-gradient(to left,#F5F7FA 0%,transparent 100%);"></div>
+      <div class="logo-track logo-track-left">
+        <div class="logo-card"><img src="brand_assets/CLIENT-15.png" alt="Dr. Reddy's"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-7.png" alt="Apollo Hospitals"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-11.png" alt="KIMS Hospitals"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-6.png" alt="ISRO"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-5.png" alt="IISc Bangalore"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-0.png" alt="AIG Hospitals"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-10.png" alt="Yashoda Hospitals"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-16.png" alt="Aurobindo"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-13.png" alt="Hetero"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-14.png" alt="ValueLabs"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-12.png" alt="Cyient"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-9.png" alt="IIT Hyderabad"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-8.png" alt="JNTU Hyderabad"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-1.png" alt="Government of Telangana"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-3.png" alt="Government of Karnataka"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-2.png" alt="Government of Maharashtra"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-4.png" alt="High Court of Andhra Pradesh"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-15.png" alt="Dr. Reddy's"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-7.png" alt="Apollo Hospitals"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-11.png" alt="KIMS Hospitals"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-6.png" alt="ISRO"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-5.png" alt="IISc Bangalore"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-0.png" alt="AIG Hospitals"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-10.png" alt="Yashoda Hospitals"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-16.png" alt="Aurobindo"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-13.png" alt="Hetero"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-14.png" alt="ValueLabs"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-12.png" alt="Cyient"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-9.png" alt="IIT Hyderabad"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-8.png" alt="JNTU Hyderabad"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-1.png" alt="Government of Telangana"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-3.png" alt="Government of Karnataka"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-2.png" alt="Government of Maharashtra"></div>
+        <div class="logo-card"><img src="brand_assets/CLIENT-4.png" alt="High Court of Andhra Pradesh"></div>
       </div>
     </div>
   </section>

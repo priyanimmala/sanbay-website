@@ -20,6 +20,16 @@
     .awards-ticker-track:hover { animation-play-state: paused; }
     @media (prefers-reduced-motion: reduce) { .awards-ticker-track { animation: none; } }
 
+    /* ── Brand logo scroller (microworldinfosol-style) ── */
+    .logo-row { position: relative; overflow: hidden; }
+    .logo-track { display: flex; align-items: center; width: max-content; }
+    .logo-track:hover { animation-play-state: paused; }
+    .logo-track-right { animation: logoScrollRight 50s linear infinite; }
+    @keyframes logoScrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    @media (prefers-reduced-motion: reduce) { .logo-track-right { animation: none; } }
+    .logo-card { flex-shrink: 0; width: 170px; height: 100px; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(6,42,79,0.07); display: flex; align-items: center; justify-content: center; padding: 16px; margin: 0 10px; }
+    .logo-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
     /* ── Dropdown Nav (Microworld-inspired) ── */
     .nav-link { font-family:'Montserrat',sans-serif; font-size:0.875rem; font-weight:500; color:#5E6774; transition:color 0.2s ease; cursor:pointer; background:none; border:none; }
     .nav-link:hover, .nav-link.active { color:#184A9D; }
@@ -346,20 +356,42 @@
 
   <!-- TECHNOLOGY PARTNERS -->
   <section class="bg-[#F5F7FA] py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
-        <h2 class="text-3xl font-bold text-[#062A4F] mb-4 tracking-tight">Our Technology Partnerships</h2>
-        <p class="text-[#5E6774] max-w-xl mx-auto">Authorized and certified by the world's most respected technology brands — ensuring every solution we deliver is backed by the best.</p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-        <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-default" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-[#5E6774] text-lg" style="font-family:'Montserrat',sans-serif;">HP</span></div>
-        <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-default" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-[#5E6774] text-sm" style="font-family:'Montserrat',sans-serif;">HPE</span></div>
-        <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-default" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-[#5E6774] text-sm" style="font-family:'Montserrat',sans-serif;">VMware</span></div>
-        <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-default" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-[#5E6774] text-xs" style="font-family:'Montserrat',sans-serif;">Microsoft</span></div>
-        <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-default" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-[#5E6774] text-sm" style="font-family:'Montserrat',sans-serif;">AWS</span></div>
-        <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-default" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-[#5E6774] text-xs" style="font-family:'Montserrat',sans-serif;">Nutanix</span></div>
-        <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-100 h-16 cursor-default col-span-2 md:col-span-1" style="box-shadow:0 1px 4px rgba(0,0,0,0.05);"><span class="font-bold text-[#5E6774] text-xs" style="font-family:'Montserrat',sans-serif;">Red Hat</span></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-12">
+      <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
+      <h2 class="text-3xl font-bold text-[#062A4F] mb-4 tracking-tight">Our Technology Partnerships</h2>
+      <p class="text-[#5E6774] max-w-xl mx-auto">Authorized and certified by the world's most respected technology brands — ensuring every solution we deliver is backed by the best.</p>
+    </div>
+
+    <div class="logo-row">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:120px;z-index:10;pointer-events:none;background:linear-gradient(to right,#F5F7FA 0%,transparent 100%);"></div>
+      <div style="position:absolute;right:0;top:0;bottom:0;width:120px;z-index:10;pointer-events:none;background:linear-gradient(to left,#F5F7FA 0%,transparent 100%);"></div>
+      <div class="logo-track logo-track-right">
+        <div class="logo-card"><img src="brand_assets/brand-5.webp" alt="HP"></div>
+        <div class="logo-card"><img src="brand_assets/brand-6.webp" alt="Hewlett Packard Enterprise"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-0.png" alt="HPE Aruba Networking"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND.png" alt="HP Amplify Power Services Partner"></div>
+        <div class="logo-card"><img src="brand_assets/brand-11.webp" alt="VMware"></div>
+        <div class="logo-card"><img src="brand_assets/brand-12.webp" alt="Microsoft"></div>
+        <div class="logo-card"><img src="brand_assets/brand-7.webp" alt="AWS"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-3.png" alt="Nutanix"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-4.png" alt="Red Hat Enterprise Linux"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-1.png" alt="CommScope"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-2.png" alt="ViewSonic"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-5.png" alt="Radware"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-6.png" alt="Microsoft Azure"></div>
+        <div class="logo-card"><img src="brand_assets/brand-5.webp" alt="HP"></div>
+        <div class="logo-card"><img src="brand_assets/brand-6.webp" alt="Hewlett Packard Enterprise"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-0.png" alt="HPE Aruba Networking"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND.png" alt="HP Amplify Power Services Partner"></div>
+        <div class="logo-card"><img src="brand_assets/brand-11.webp" alt="VMware"></div>
+        <div class="logo-card"><img src="brand_assets/brand-12.webp" alt="Microsoft"></div>
+        <div class="logo-card"><img src="brand_assets/brand-7.webp" alt="AWS"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-3.png" alt="Nutanix"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-4.png" alt="Red Hat Enterprise Linux"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-1.png" alt="CommScope"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-2.png" alt="ViewSonic"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-5.png" alt="Radware"></div>
+        <div class="logo-card"><img src="brand_assets/BRAND-6.png" alt="Microsoft Azure"></div>
       </div>
     </div>
   </section>
