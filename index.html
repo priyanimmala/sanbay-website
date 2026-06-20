@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanbay Networks — Infrastructure. Innovation. Trust.</title>
-  <meta name="description" content="India's Trusted Enterprise Technology Infrastructure Partner. Serving 1200+ organizations across Healthcare, Government, BFSI, Manufacturing, Education and IT sectors.">
+  <meta name="description" content="India's Trusted Enterprise Technology Infrastructure Partner. Serving 1200+ organizations across Healthcare, Hospitality, BFSI, IT & ITES, Education and Manufacturing sectors.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,29 @@
     body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
     h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; }
     .ibm { font-family: 'IBM Plex Sans', sans-serif; }
+
+    /* ── Dropdown Nav (Microworld-inspired) ── */
+    .nav-link { font-family:'Montserrat',sans-serif; font-size:0.875rem; font-weight:500; color:#5E6774; transition:color 0.2s ease; cursor:pointer; background:none; border:none; }
+    .nav-link:hover, .nav-link.active { color:#184A9D; }
+    .nav-link.active { font-weight:600; border-bottom:2px solid #F57C00; padding-bottom:4px; }
+    .dropdown-wrap { position:relative; }
+    .dropdown-panel { position:absolute; top:100%; left:0; padding-top:14px; opacity:0; visibility:hidden; transform:translateY(4px); transition:opacity 0.18s ease, transform 0.18s ease, visibility 0.18s; z-index:60; }
+    .dropdown-wrap:hover .dropdown-panel { opacity:1; visibility:visible; transform:translateY(0); }
+    .dropdown-card { background:#fff; border:1px solid #EEF1F4; border-radius:14px; box-shadow:0 16px 40px rgba(6,42,79,0.16); padding:10px; }
+    .dropdown-row { display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:10px; transition:background 0.15s ease; text-decoration:none; }
+    .dropdown-row:hover { background:#F5F7FA; }
+    .dropdown-row .d-icon { width:34px; height:34px; border-radius:50%; background:rgba(245,124,0,0.1); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .dropdown-row .d-icon svg { width:16px; height:16px; color:#F57C00; }
+    .dropdown-row .d-label { font-size:0.8125rem; font-weight:600; color:#062A4F; flex:1; font-family:'Montserrat',sans-serif; line-height:1.3; }
+    .dropdown-row .d-arrow { width:14px; height:14px; color:#CBD5E1; flex-shrink:0; }
+    .dropdown-chevron { transition:transform 0.2s ease; }
+    .dropdown-wrap:hover .dropdown-chevron { transform:rotate(180deg); }
+    .cta-pill { display:inline-flex; align-items:center; gap:10px; background:#F57C00; color:#fff; font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.8125rem; padding-left:20px; padding-right:6px; height:44px; border-radius:9999px; transition:background 0.2s ease; box-shadow:0 4px 14px rgba(245,124,0,0.3); text-decoration:none; }
+    .cta-pill:hover { background:#e06f00; }
+    .cta-pill .cta-circle { width:32px; height:32px; border-radius:50%; background:#062A4F; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .cta-pill .cta-circle svg { width:15px; height:15px; color:#fff; }
+    .mob-accordion-icon { transition: transform 0.2s ease; }
+    .orbit-corner { position:fixed; top:-25px; left:-25px; width:70px; height:70px; border-radius:50%; border:3px solid #F57C00; opacity:0.55; z-index:51; pointer-events:none; }
 
     .grid-bg {
       background-image:
@@ -120,22 +143,89 @@
 <body class="bg-white text-gray-900 antialiased">
 
   <!-- NAVBAR -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/96 backdrop-blur-md border-b border-gray-100" style="box-shadow: 0 1px 16px rgba(6,42,79,0.07);">
+  <div class="orbit-corner"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-gray-100" style="box-shadow: 0 1px 16px rgba(6,42,79,0.07); background-color: rgba(255,255,255,0.96);">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex items-center justify-between h-[70px]">
+      <div class="flex items-center justify-between h-[72px]">
         <a href="index.html" class="flex items-center shrink-0">
           <img src="brand_assets/sanbay-logo-sm.png" alt="Sanbay Networks" class="h-10 w-auto">
         </a>
-        <div class="hidden lg:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-semibold text-[#184A9D] border-b-2 border-[#F57C00] pb-0.5" style="font-family:'Montserrat',sans-serif;">Home</a>
-          <a href="about.html" class="text-sm font-medium text-[#5E6774] hover:text-[#184A9D] transition-colors duration-200" style="font-family:'Montserrat',sans-serif;">About Us</a>
-          <a href="services.html" class="text-sm font-medium text-[#5E6774] hover:text-[#184A9D] transition-colors duration-200" style="font-family:'Montserrat',sans-serif;">Services</a>
-          <a href="contact.html" class="text-sm font-medium text-[#5E6774] hover:text-[#184A9D] transition-colors duration-200" style="font-family:'Montserrat',sans-serif;">Contact Us</a>
+        <div class="hidden lg:flex items-center gap-7">
+          <a href="index.html" class="nav-link active">Home</a>
+
+          <div class="dropdown-wrap">
+            <button class="nav-link flex items-center gap-1">Who We Are
+              <svg class="dropdown-chevron w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-panel">
+              <div class="dropdown-card" style="width:260px;">
+                <a href="about.html" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+                  <span class="d-label">About Us</span>
+                  <svg class="d-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+                <a href="about.html#awards" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M5 4h2v3a2 2 0 0 1-2 2H4a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2zM19 4h-2v3a2 2 0 0 0 2 2h1a1 1 0 0 0 1-1V6a2 2 0 0 0-2-2z"/></svg></span>
+                  <span class="d-label">Awards & Recognition</span>
+                  <svg class="d-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+                <a href="contact.html#offices" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                  <span class="d-label">Our Offices</span>
+                  <svg class="d-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown-wrap">
+            <button class="nav-link flex items-center gap-1">What We Do
+              <svg class="dropdown-chevron w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-panel" style="left:50%;transform:translateX(-50%);">
+              <div class="dropdown-card grid grid-cols-2 gap-1" style="width:520px;">
+                <a href="services.html#endpoint-devices" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
+                  <span class="d-label">End-Point Devices</span>
+                </a>
+                <a href="services.html#enterprise-solutions" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></span>
+                  <span class="d-label">Enterprise Solutions</span>
+                </a>
+                <a href="services.html#network-solutions" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16"/><line x1="12" y1="8" x2="18.5" y2="16"/></svg></span>
+                  <span class="d-label">Network Solutions</span>
+                </a>
+                <a href="services.html#firewall-security" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                  <span class="d-label">Firewall & Security Solutions</span>
+                </a>
+                <a href="services.html#hybrid-workspace" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+                  <span class="d-label">Hybrid Workspace Solutions</span>
+                </a>
+                <a href="services.html#project-management" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></span>
+                  <span class="d-label">Project Management</span>
+                </a>
+                <a href="services.html#it-services" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
+                  <span class="d-label">IT Services</span>
+                </a>
+                <a href="services.html#financing-solutions" class="dropdown-row">
+                  <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2.5-5 2-5 4.5a2.5 2.5 0 0 0 5 0"/><line x1="12" y1="6" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="18"/></svg></span>
+                  <span class="d-label">Financing Solutions</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="nav-link">Contact Us</a>
         </div>
         <div class="flex items-center gap-3">
-          <a href="contact.html" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-[#F57C00] text-white text-sm font-semibold rounded-md hover:bg-[#e06f00] transition-colors duration-200 cursor-pointer" style="font-family:'Montserrat',sans-serif; box-shadow:0 2px 10px rgba(245,124,0,0.32);">
+          <a href="contact.html" class="cta-pill hidden lg:inline-flex">
             Request Consultation
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <span class="cta-circle"><svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/></svg></span>
           </a>
           <button id="mob-btn" class="lg:hidden p-2 text-[#5E6774] hover:text-[#184A9D] cursor-pointer transition-colors duration-200" aria-label="Toggle menu">
             <svg id="menu-ico" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -143,12 +233,41 @@
           </button>
         </div>
       </div>
-      <div id="mob-menu" class="hidden lg:hidden border-t border-gray-100 py-5 space-y-4">
-        <a href="index.html" class="block text-sm font-semibold text-[#184A9D]">Home</a>
-        <a href="about.html" class="block text-sm font-medium text-[#5E6774]">About Us</a>
-        <a href="services.html" class="block text-sm font-medium text-[#5E6774]">Services</a>
-        <a href="contact.html" class="block text-sm font-medium text-[#5E6774]">Contact Us</a>
-        <a href="contact.html" class="inline-flex items-center px-5 py-2.5 bg-[#F57C00] text-white text-sm font-semibold rounded-md cursor-pointer">Request Consultation</a>
+      <div id="mob-menu" class="hidden lg:hidden border-t border-gray-100 py-4">
+        <div class="max-h-[75vh] overflow-y-auto space-y-1">
+          <a href="index.html" class="block py-2.5 text-sm font-semibold text-[#184A9D]" style="font-family:'Montserrat',sans-serif;">Home</a>
+
+          <button class="mob-acc-btn flex items-center justify-between w-full py-2.5 text-sm font-medium text-[#5E6774] cursor-pointer" data-target="mob-who" style="font-family:'Montserrat',sans-serif;">
+            Who We Are
+            <svg class="mob-accordion-icon w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mob-who" class="hidden pl-3 pb-2 space-y-1 border-l-2 border-gray-100 ml-1">
+            <a href="about.html" class="block py-2 text-sm text-[#5E6774]">About Us</a>
+            <a href="about.html#awards" class="block py-2 text-sm text-[#5E6774]">Awards & Recognition</a>
+            <a href="contact.html#offices" class="block py-2 text-sm text-[#5E6774]">Our Offices</a>
+          </div>
+
+          <button class="mob-acc-btn flex items-center justify-between w-full py-2.5 text-sm font-medium text-[#5E6774] cursor-pointer" data-target="mob-what" style="font-family:'Montserrat',sans-serif;">
+            What We Do
+            <svg class="mob-accordion-icon w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mob-what" class="hidden pl-3 pb-2 space-y-1 border-l-2 border-gray-100 ml-1">
+            <a href="services.html#endpoint-devices" class="block py-2 text-sm text-[#5E6774]">End-Point Devices</a>
+            <a href="services.html#enterprise-solutions" class="block py-2 text-sm text-[#5E6774]">Enterprise Solutions</a>
+            <a href="services.html#network-solutions" class="block py-2 text-sm text-[#5E6774]">Network Solutions</a>
+            <a href="services.html#firewall-security" class="block py-2 text-sm text-[#5E6774]">Firewall & Security Solutions</a>
+            <a href="services.html#hybrid-workspace" class="block py-2 text-sm text-[#5E6774]">Hybrid Workspace Solutions</a>
+            <a href="services.html#project-management" class="block py-2 text-sm text-[#5E6774]">Project Management</a>
+            <a href="services.html#it-services" class="block py-2 text-sm text-[#5E6774]">IT Services</a>
+            <a href="services.html#financing-solutions" class="block py-2 text-sm text-[#5E6774]">Financing Solutions</a>
+          </div>
+
+          <a href="contact.html" class="block py-2.5 text-sm font-medium text-[#5E6774]" style="font-family:'Montserrat',sans-serif;">Contact Us</a>
+          <a href="contact.html" class="cta-pill mt-2">
+            Request Consultation
+            <span class="cta-circle"><svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/></svg></span>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -209,11 +328,11 @@
     </div>
 
     <!-- ── Hero content (centered, matches component layout) ── -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-28 pt-36">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-10 pt-24">
       <div class="max-w-3xl mx-auto text-center">
 
         <!-- Badge (component: Circle icon + badge text) -->
-        <div class="hf hf-1 inline-flex items-center gap-2 mb-10 px-4 py-2 rounded-full" style="background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.1);">
+        <div class="hf hf-1 inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.1);">
           <!-- Sanbay Orange dot replaces rose Circle icon -->
           <span style="width:8px;height:8px;border-radius:50%;background:#F57C00;display:inline-block;flex-shrink:0;"></span>
           <span style="font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.6);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;">Infrastructure. Innovation. Trust.</span>
@@ -221,7 +340,7 @@
 
         <!-- Title (component: title1 white gradient, title2 indigo→rose → Sanbay blue→orange) -->
         <div class="hf hf-2">
-          <h1 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(2.2rem,5.5vw,4.5rem);line-height:1.08;letter-spacing:-0.025em;margin-bottom:1.5rem;">
+          <h1 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(1.9rem,2.8vw,2.75rem);line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.1rem;">
             <span style="display:block;background:linear-gradient(180deg,#ffffff 0%,rgba(255,255,255,0.82) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
               India's Trusted Enterprise
             </span>
@@ -234,13 +353,13 @@
 
         <!-- Description (component: text-white/40 font-light) -->
         <div class="hf hf-3">
-          <p style="font-size:1.05rem;color:rgba(255,255,255,0.42);line-height:1.8;font-weight:300;letter-spacing:0.01em;max-width:560px;margin:0 auto 2.5rem;">
+          <p style="font-size:0.95rem;color:rgba(255,255,255,0.42);line-height:1.65;font-weight:300;letter-spacing:0.01em;max-width:520px;margin:0 auto 1.6rem;">
             Helping organizations build secure, scalable and future-ready digital ecosystems — partnered with HP, HPE, VMware, Microsoft, AWS, Nutanix and RedHat.
           </p>
         </div>
 
         <!-- CTAs -->
-        <div class="hf hf-4 flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <div class="hf hf-4 flex flex-col sm:flex-row gap-4 justify-center mb-7">
           <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#F57C00] text-white font-bold rounded-md hover:bg-[#e06f00] transition-colors duration-200 cursor-pointer" style="font-family:'Montserrat',sans-serif;box-shadow:0 4px 20px rgba(245,124,0,0.45);">
             Request Consultation
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -365,63 +484,81 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="mb-16">
         <div class="orange-bar mb-5"></div>
-        <h2 class="text-3xl lg:text-4xl font-bold text-[#062A4F] mb-4 tracking-tight">Comprehensive IT Solutions<br>for the Enterprise</h2>
+        <h2 class="text-3xl lg:text-4xl font-bold text-[#062A4F] mb-4 tracking-tight">Products and Services<br>for the Enterprise</h2>
         <p class="text-[#5E6774] text-lg leading-relaxed max-w-2xl">End-to-end technology infrastructure services tailored for India's most demanding organizations.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-3">End-Point Devices</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Laptops, desktops, workstations, printers, thin clients and VDI solutions from HP and AMD.</p>
+          <a href="services.html#endpoint-devices" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
 
         <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
           <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
             <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="6" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">IT Infrastructure</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Enterprise-grade servers, storage, hyper-converged infrastructure and compute solutions from HP, HPE, Nutanix and world-class vendors.</p>
-          <a href="services.html" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
-
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-          </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Cloud Solutions</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Public, private, and hybrid cloud architectures powered by AWS, Microsoft Azure, and VMware — seamless migration and management.</p>
-          <a href="services.html" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-        </div>
-
-        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Cybersecurity</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Comprehensive security solutions — network protection, endpoint security, data encryption and compliance frameworks for enterprise environments.</p>
-          <a href="services.html" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Enterprise Solutions</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Server, storage, hyper-converged infrastructure, virtualization and DC/DR solutions from HPE, Nutanix and VMware.</p>
+          <a href="services.html#enterprise-solutions" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
         </div>
 
         <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
           <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
             <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16"/><line x1="12" y1="8" x2="18.5" y2="16"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Network & Connectivity</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Enterprise LAN/WAN, SD-WAN, and wireless network solutions ensuring reliable, high-performance connectivity for distributed organizations.</p>
-          <a href="services.html" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Network Solutions</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Wired switches, wireless and SD-WAN solutions ensuring seamless connectivity and efficient data transfer.</p>
+          <a href="services.html#network-solutions" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
         </div>
 
         <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
           <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Managed IT Services</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">24/7 NOC/SOC monitoring, proactive IT support, AMC services, and end-to-end infrastructure management for enterprise organizations.</p>
-          <a href="services.html" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Firewall & Security Solutions</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Network security, end-point security and cyber security solutions defending your most critical assets.</p>
+          <a href="services.html#firewall-security" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
         </div>
 
         <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
           <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
             <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Digital Workplace</h3>
-          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Modern workspace solutions including VDI, Microsoft 365, collaboration platforms and endpoint management for productive, distributed teams.</p>
-          <a href="services.html" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Hybrid Workspace Solutions</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Next gen headsets, conference room solutions and video conferencing for hybrid collaboration.</p>
+          <a href="services.html#hybrid-workspace" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Project Management</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Passive NW projects, audio/video solutions, CCTV, public address systems and access control.</p>
+          <a href="services.html#project-management" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-3">IT Services</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">Annual maintenance contracts, managed print services, managed IT and field services support.</p>
+          <a href="services.html#it-services" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="service-card p-8 border border-gray-100 rounded-lg cursor-pointer" style="box-shadow:0 2px 12px rgba(6,42,79,0.05);">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style="background:rgba(24,74,157,0.08);">
+            <svg class="w-6 h-6 text-[#184A9D]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2.5-5 2-5 4.5a2.5 2.5 0 0 0 5 0"/><line x1="12" y1="6" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="18"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-3">Financing Solutions</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed mb-5">IT hardware leasing solutions giving you access to the latest equipment without the burden of ownership costs.</p>
+          <a href="services.html#financing-solutions" class="inline-flex items-center gap-1 text-[#184A9D] text-sm font-semibold hover:gap-2 transition-all duration-200 cursor-pointer">Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
         </div>
 
       </div>
@@ -874,12 +1011,12 @@
         <div>
           <h3 class="text-white font-bold text-xs uppercase tracking-widest mb-5" style="font-family:'Montserrat',sans-serif;">Services</h3>
           <ul class="space-y-3">
-            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">IT Infrastructure</a></li>
-            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Cloud Solutions</a></li>
-            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Cybersecurity</a></li>
-            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Network & Connectivity</a></li>
-            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Managed IT Services</a></li>
-            <li><a href="services.html" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Digital Workplace</a></li>
+            <li><a href="services.html#endpoint-devices" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">End-Point Devices</a></li>
+            <li><a href="services.html#enterprise-solutions" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Enterprise Solutions</a></li>
+            <li><a href="services.html#network-solutions" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Network Solutions</a></li>
+            <li><a href="services.html#firewall-security" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Firewall & Security</a></li>
+            <li><a href="services.html#hybrid-workspace" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">Hybrid Workspace</a></li>
+            <li><a href="services.html#it-services" class="text-gray-400 text-sm hover:text-[#F57C00] transition-colors duration-200">IT Services</a></li>
           </ul>
         </div>
         <div>
@@ -921,6 +1058,15 @@
       mobMenu.classList.toggle('hidden');
       menuIco.classList.toggle('hidden', !open);
       closeIco.classList.toggle('hidden', open);
+    });
+    document.querySelectorAll('.mob-acc-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const panel = document.getElementById(btn.dataset.target);
+        const icon = btn.querySelector('.mob-accordion-icon');
+        const willOpen = panel.classList.contains('hidden');
+        panel.classList.toggle('hidden');
+        icon.style.transform = willOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
     });
   </script>
 </body>
