@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 import { existsSync, mkdirSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
@@ -26,6 +26,7 @@ const outputPath = join(screenshotsDir, filename);
 
 const browser = await puppeteer.launch({
   headless: true,
+  executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
   args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
 });
 

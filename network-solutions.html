@@ -3,39 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Enterprise IT Infrastructure Solutions | Sanbay Networks</title>
-  <meta name="description" content="Explore Sanbay Networks' enterprise IT services — End-Point Devices, Enterprise Solutions, Network Solutions, Firewall & Security, Hybrid Workspace, Project Management, IT Services and Financing Solutions.">
-  <link rel="canonical" href="https://www.sanbay.net/services.html">
-  <meta property="og:title" content="Services — Sanbay Networks">
-  <meta property="og:description" content="End-to-end enterprise technology solutions delivered by certified experts.">
+  <title>Network Solutions — Wired, Wireless & SD-WAN | Sanbay Networks</title>
+  <meta name="description" content="Seamless enterprise connectivity with wired switching, enterprise wireless and SD-WAN solutions. Trusted network infrastructure for India's leading organizations.">
+  <link rel="canonical" href="https://www.sanbay.net/network-solutions.html">
+  <meta property="og:title" content="Network Solutions — Sanbay Networks">
+  <meta property="og:description" content="Wired switches, enterprise wireless and SD-WAN solutions for seamless connectivity.">
+  <meta property="og:image" content="brand_assets/expertise-network-solutions.jpg">
   <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Network Solutions",
+    "name": "Network Solutions — Wired, Wireless & SD-WAN",
+    "provider": { "@type": "Organization", "name": "Sanbay Networks Pvt. Ltd.", "url": "https://www.sanbay.net" },
+    "areaServed": "India",
+    "description": "Enterprise wired switching, high-density wireless and SD-WAN solutions for seamless, secure connectivity across single and multi-site organizations."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How long does an enterprise network deployment typically take?","acceptedAnswer":{"@type":"Answer","text":"Timelines depend on site count and complexity, but a single-site deployment typically takes 2-6 weeks from design to go-live, including site survey, configuration and testing."}},
+      {"@type":"Question","name":"What is SD-WAN and why would my organization need it?","acceptedAnswer":{"@type":"Answer","text":"SD-WAN intelligently manages traffic across multiple network connections, reducing dependency on expensive dedicated lines while improving reliability — ideal if you operate across multiple branches or offices."}},
+      {"@type":"Question","name":"Can you upgrade our wireless network without disrupting daily operations?","acceptedAnswer":{"@type":"Answer","text":"Yes, we plan phased rollouts and schedule installation work during low-traffic periods to minimize disruption to your operations."}},
+      {"@type":"Question","name":"Do you provide network security alongside connectivity?","acceptedAnswer":{"@type":"Answer","text":"Network security is part of our Firewall & Security Solutions offering, and we frequently design network and security architecture together for a unified, secure deployment."}},
+      {"@type":"Question","name":"How do you ensure wireless coverage in large facilities like hospitals or factories?","acceptedAnswer":{"@type":"Answer","text":"We conduct a detailed site survey and RF planning before deployment, mapping coverage requirements against building materials, interference sources and density needs to eliminate dead zones."}}
+    ]
+  }
+  </script>
   <style>
     body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
     h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; }
     .ibm { font-family: 'IBM Plex Sans', sans-serif; }
     .orange-bar { width: 48px; height: 3px; background: #F57C00; border-radius: 2px; }
-    .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 64px 64px; }
-
-    /* ── Service preview cards ── */
-    .svc-prev-card { display:flex; flex-direction:column; border:1px solid #EEF1F4; border-radius:16px; overflow:hidden; background:#fff; text-decoration:none; transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
-    .svc-prev-card:hover { transform:translateY(-5px); box-shadow:0 22px 48px rgba(6,42,79,0.14); border-color:rgba(24,74,157,0.2); }
-    .svc-prev-img-wrap { position:relative; height:200px; overflow:hidden; }
-    .svc-prev-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease; }
-    .svc-prev-card:hover .svc-prev-img-wrap img { transform:scale(1.06); }
-    .svc-prev-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,42,79,0.15) 0%, rgba(6,42,79,0.78) 100%); }
-    .svc-prev-tag { position:absolute; left:18px; bottom:16px; display:inline-flex; align-items:center; background:#F57C00; color:#fff; font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.08em; padding:5px 12px; border-radius:6px; }
-    .svc-prev-body { padding:24px 26px 26px; flex:1; display:flex; flex-direction:column; }
-    .svc-prev-points { display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 18px; }
-    .svc-prev-point { font-size:0.7rem; font-weight:600; color:#184A9D; background:rgba(24,74,157,0.07); padding:4px 10px; border-radius:6px; }
-    .svc-prev-link { margin-top:auto; display:inline-flex; align-items:center; gap:6px; color:#F57C00; font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.85rem; }
-    .svc-prev-link svg { width:14px; height:14px; transition:transform 0.2s ease; }
-    .svc-prev-card:hover .svc-prev-link svg { transform:translateX(3px); }
-
-    /* ── Dropdown Nav (Microworld-inspired) ── */
     .nav-link { font-family:'Montserrat',sans-serif; font-size:0.875rem; font-weight:500; color:#5E6774; transition:color 0.2s ease; cursor:pointer; background:none; border:none; }
     .nav-link:hover, .nav-link.active { color:#184A9D; }
     .nav-link.active { font-weight:600; border-bottom:2px solid #F57C00; padding-bottom:4px; }
@@ -49,6 +56,8 @@
     .dropdown-row .d-icon svg { width:16px; height:16px; color:#F57C00; }
     .dropdown-row .d-label { font-size:0.8125rem; font-weight:600; color:#062A4F; flex:1; font-family:'Montserrat',sans-serif; line-height:1.3; }
     .dropdown-row .d-arrow { width:14px; height:14px; color:#CBD5E1; flex-shrink:0; }
+    .dropdown-row.is-current { background:#F5F7FA; }
+    .dropdown-row.is-current .d-label { color:#184A9D; }
     .dropdown-chevron { transition:transform 0.2s ease; }
     .dropdown-wrap:hover .dropdown-chevron { transform:rotate(180deg); }
     .cta-pill { display:inline-flex; align-items:center; gap:10px; background:#F57C00; color:#fff; font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.8125rem; padding-left:20px; padding-right:6px; height:44px; border-radius:9999px; transition:background 0.2s ease; box-shadow:0 4px 14px rgba(245,124,0,0.3); text-decoration:none; }
@@ -56,6 +65,22 @@
     .cta-pill .cta-circle { width:32px; height:32px; border-radius:50%; background:#062A4F; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .cta-pill .cta-circle svg { width:15px; height:15px; color:#fff; }
     .mob-accordion-icon { transition: transform 0.2s ease; }
+    .svc-tag { display:inline-flex; align-items:center; background:#F57C00; color:#fff; font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; padding:6px 14px; border-radius:6px; }
+    .feature-card { background:#fff; border:1px solid #EEF1F4; border-radius:16px; padding:28px; transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+    .feature-card:hover { transform:translateY(-4px); box-shadow:0 20px 44px rgba(6,42,79,0.1); border-color:rgba(24,74,157,0.18); }
+    .feature-icon { width:48px; height:48px; border-radius:12px; background:rgba(24,74,157,0.08); display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+    .feature-icon svg { width:22px; height:22px; color:#184A9D; }
+    .faq-item { border:1px solid #EEF1F4; border-radius:14px; padding:6px 22px; transition:border-color 0.2s ease, background 0.2s ease; }
+    .faq-item:hover { border-color:rgba(24,74,157,0.25); }
+    .faq-item summary { font-family:'Montserrat',sans-serif; font-weight:600; color:#062A4F; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; padding:16px 0; }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-icon { width:24px; height:24px; border-radius:50%; background:rgba(245,124,0,0.1); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform 0.25s ease; }
+    .faq-icon svg { width:12px; height:12px; color:#F57C00; }
+    .faq-item[open] .faq-icon { transform:rotate(45deg); }
+    .faq-item p { padding-bottom:18px; color:#5E6774; font-size:0.9rem; line-height:1.7; }
+    .related-card { background:#fff; border:1px solid #EEF1F4; border-radius:14px; padding:24px; transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; text-decoration:none; display:block; }
+    .related-card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(6,42,79,0.1); border-color:rgba(24,74,157,0.2); }
+    @media (prefers-reduced-motion: reduce) { .feature-card:hover, .related-card:hover { transform:none; } }
   </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -107,7 +132,7 @@
                   <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></span>
                   <span class="d-label">Enterprise Solutions</span>
                 </a>
-                <a href="network-solutions.html" class="dropdown-row">
+                <a href="network-solutions.html" class="dropdown-row is-current">
                   <span class="d-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16"/><line x1="12" y1="8" x2="18.5" y2="16"/></svg></span>
                   <span class="d-label">Network Solutions</span>
                 </a>
@@ -169,7 +194,7 @@
           <div id="mob-what" class="hidden pl-3 pb-2 space-y-1 border-l-2 border-gray-100 ml-1">
             <a href="endpoint-devices.html" class="block py-2 text-sm text-[#5E6774]">End-Point Devices</a>
             <a href="enterprise-solutions.html" class="block py-2 text-sm text-[#5E6774]">Enterprise Solutions</a>
-            <a href="network-solutions.html" class="block py-2 text-sm text-[#5E6774]">Network Solutions</a>
+            <a href="network-solutions.html" class="block py-2 text-sm font-semibold text-[#184A9D]">Network Solutions</a>
             <a href="firewall-security.html" class="block py-2 text-sm text-[#5E6774]">Firewall & Security Solutions</a>
             <a href="hybrid-workspace.html" class="block py-2 text-sm text-[#5E6774]">Hybrid Workspace Solutions</a>
             <a href="project-management.html" class="block py-2 text-sm text-[#5E6774]">Project Management</a>
@@ -187,238 +212,148 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
-  <section class="relative bg-[#062A4F] pt-[72px] overflow-hidden">
-    <div class="absolute inset-0 grid-bg"></div>
-    <div style="position:absolute;width:500px;height:500px;border-radius:50%;border:2px solid #F57C00;opacity:0.1;right:-80px;top:50%;transform:translateY(-50%);"></div>
-    <div style="position:absolute;width:280px;height:280px;border-radius:50%;border:1.5px solid #F57C00;opacity:0.18;right:80px;top:50%;transform:translateY(-50%);"></div>
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%, rgba(24,74,157,0.3) 0%, transparent 60%);"></div>
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
+  <!-- HERO -->
+  <section class="relative pt-[72px] overflow-hidden">
+    <img src="brand_assets/expertise-network-solutions.jpg" alt="Enterprise network solutions — wired, wireless and SD-WAN" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    <div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(6,42,79,0.95) 0%, rgba(6,42,79,0.8) 42%, rgba(6,42,79,0.4) 100%);"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20" style="min-height:480px;display:flex;align-items:center;">
       <div class="max-w-2xl">
-        <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full" style="border:1px solid rgba(245,124,0,0.3);background:rgba(245,124,0,0.1);">
-          <span class="text-[#F57C00] text-xs font-semibold tracking-widest uppercase" style="font-family:'Montserrat',sans-serif;">What We Do</span>
+        <div class="flex items-center gap-2 text-xs text-gray-300 mb-6">
+          <a href="index.html" class="hover:text-white transition-colors duration-200">Home</a>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <a href="services.html" class="hover:text-white transition-colors duration-200">Services</a>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <span class="text-white">Network Solutions</span>
         </div>
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-5 tracking-tight leading-tight">Our Services</h1>
-        <p class="text-gray-300 text-lg leading-relaxed">End-to-end enterprise technology solutions — from infrastructure design to 24/7 managed support — delivered by certified experts.</p>
-      </div>
-    </div>
-    <div class="relative bg-[#184A9D]/40 border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-gray-400">
-        <a href="index.html" class="hover:text-white transition-colors duration-200">Home</a>
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        <span class="text-white">Services</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES OVERVIEW GRID -->
-  <section class="bg-white py-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
-        <h2 class="text-3xl lg:text-4xl font-bold text-[#062A4F] mb-4 tracking-tight">Products and Services</h2>
-        <p class="text-[#5E6774] text-lg max-w-2xl mx-auto">Every service is backed by certified partnerships and 20+ years of domain expertise — designed for enterprise scale. Select a service to explore the full solution.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-
-        <a href="endpoint-devices.html" class="svc-prev-card">
-          <div class="svc-prev-img-wrap">
-            <img src="brand_assets/expertise-endpoint-devices.jpg" alt="End-Point Devices" loading="lazy">
-            <div class="svc-prev-overlay"></div>
-            <span class="svc-prev-tag">Devices & Hardware</span>
-          </div>
-          <div class="svc-prev-body">
-            <h3 class="text-lg font-bold text-[#062A4F]">End-Point Devices</h3>
-            <p class="text-[#5E6774] text-sm mt-2 leading-relaxed">Laptops, desktops, workstations and VDI solutions that keep your workforce equipped and productive.</p>
-            <div class="svc-prev-points">
-              <span class="svc-prev-point">Laptops</span><span class="svc-prev-point">Desktops</span><span class="svc-prev-point">VDI</span>
-            </div>
-            <span class="svc-prev-link">Learn More <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-
-        <a href="enterprise-solutions.html" class="svc-prev-card">
-          <div class="svc-prev-img-wrap">
-            <img src="brand_assets/expertise-enterprise-solutions.jpg" alt="Enterprise Solutions" loading="lazy">
-            <div class="svc-prev-overlay"></div>
-            <span class="svc-prev-tag">Infrastructure</span>
-          </div>
-          <div class="svc-prev-body">
-            <h3 class="text-lg font-bold text-[#062A4F]">Enterprise Solutions</h3>
-            <p class="text-[#5E6774] text-sm mt-2 leading-relaxed">Server, storage, HCI and DC/DR solutions that form the backbone of your digital operations.</p>
-            <div class="svc-prev-points">
-              <span class="svc-prev-point">Server</span><span class="svc-prev-point">Storage</span><span class="svc-prev-point">HCI</span>
-            </div>
-            <span class="svc-prev-link">Learn More <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-
-        <a href="network-solutions.html" class="svc-prev-card">
-          <div class="svc-prev-img-wrap">
-            <img src="brand_assets/expertise-network-solutions.jpg" alt="Network Solutions" loading="lazy">
-            <div class="svc-prev-overlay"></div>
-            <span class="svc-prev-tag">Connectivity</span>
-          </div>
-          <div class="svc-prev-body">
-            <h3 class="text-lg font-bold text-[#062A4F]">Network Solutions</h3>
-            <p class="text-[#5E6774] text-sm mt-2 leading-relaxed">Wired, wireless and SD-WAN solutions delivering seamless connectivity across every site.</p>
-            <div class="svc-prev-points">
-              <span class="svc-prev-point">Wired</span><span class="svc-prev-point">Wireless</span><span class="svc-prev-point">SD-WAN</span>
-            </div>
-            <span class="svc-prev-link">Learn More <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-
-        <a href="firewall-security.html" class="svc-prev-card">
-          <div class="svc-prev-img-wrap">
-            <img src="brand_assets/expertise-firewall-security.jpg" alt="Firewall & Security Solutions" loading="lazy">
-            <div class="svc-prev-overlay"></div>
-            <span class="svc-prev-tag">Security</span>
-          </div>
-          <div class="svc-prev-body">
-            <h3 class="text-lg font-bold text-[#062A4F]">Firewall & Security Solutions</h3>
-            <p class="text-[#5E6774] text-sm mt-2 leading-relaxed">Network and end-point security delivering strong defense for your organization's most critical assets.</p>
-            <div class="svc-prev-points">
-              <span class="svc-prev-point">Network Security</span><span class="svc-prev-point">Cyber Security</span>
-            </div>
-            <span class="svc-prev-link">Learn More <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-
-        <a href="hybrid-workspace.html" class="svc-prev-card">
-          <div class="svc-prev-img-wrap">
-            <img src="brand_assets/expertise-hybrid-workspace.jpg" alt="Hybrid Workspace Solutions" loading="lazy">
-            <div class="svc-prev-overlay"></div>
-            <span class="svc-prev-tag">Collaboration</span>
-          </div>
-          <div class="svc-prev-body">
-            <h3 class="text-lg font-bold text-[#062A4F]">Hybrid Workspace Solutions</h3>
-            <p class="text-[#5E6774] text-sm mt-2 leading-relaxed">Headsets, conference rooms and video conferencing built for hybrid collaboration.</p>
-            <div class="svc-prev-points">
-              <span class="svc-prev-point">Headsets</span><span class="svc-prev-point">Conference Rooms</span>
-            </div>
-            <span class="svc-prev-link">Learn More <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-
-        <a href="project-management.html" class="svc-prev-card">
-          <div class="svc-prev-img-wrap">
-            <img src="brand_assets/expertise-project-management.jpg" alt="Project Management" loading="lazy">
-            <div class="svc-prev-overlay"></div>
-            <span class="svc-prev-tag">Deployment</span>
-          </div>
-          <div class="svc-prev-body">
-            <h3 class="text-lg font-bold text-[#062A4F]">Project Management</h3>
-            <p class="text-[#5E6774] text-sm mt-2 leading-relaxed">Passive network, AV, CCTV and access control projects delivered end-to-end, on time.</p>
-            <div class="svc-prev-points">
-              <span class="svc-prev-point">CCTV</span><span class="svc-prev-point">Access Control</span>
-            </div>
-            <span class="svc-prev-link">Learn More <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-
-        <a href="it-services.html" class="svc-prev-card">
-          <div class="svc-prev-img-wrap">
-            <img src="brand_assets/expertise-it-services.jpg" alt="IT Services" loading="lazy">
-            <div class="svc-prev-overlay"></div>
-            <span class="svc-prev-tag">Managed Services</span>
-          </div>
-          <div class="svc-prev-body">
-            <h3 class="text-lg font-bold text-[#062A4F]">IT Services</h3>
-            <p class="text-[#5E6774] text-sm mt-2 leading-relaxed">AMC, managed print, managed IT and field services — keeping your business running without the firefighting.</p>
-            <div class="svc-prev-points">
-              <span class="svc-prev-point">AMC</span><span class="svc-prev-point">Managed IT</span>
-            </div>
-            <span class="svc-prev-link">Learn More <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-
-        <a href="financing-solutions.html" class="svc-prev-card">
-          <div class="svc-prev-img-wrap">
-            <img src="brand_assets/expertise-financing-solutions.jpg" alt="Financing Solutions" loading="lazy">
-            <div class="svc-prev-overlay"></div>
-            <span class="svc-prev-tag">Flexible Ownership</span>
-          </div>
-          <div class="svc-prev-body">
-            <h3 class="text-lg font-bold text-[#062A4F]">Financing Solutions</h3>
-            <p class="text-[#5E6774] text-sm mt-2 leading-relaxed">Flexible IT hardware leasing that gives you the latest technology without the capital burden.</p>
-            <div class="svc-prev-points">
-              <span class="svc-prev-point">Leasing</span><span class="svc-prev-point">OPEX Model</span>
-            </div>
-            <span class="svc-prev-link">Learn More <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-
+        <span class="svc-tag mb-5 inline-block">Connectivity</span>
+        <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-5 tracking-tight leading-tight">Network Infrastructure That Keeps Your Business Connected</h1>
+        <p class="text-gray-200 text-lg leading-relaxed mb-8">Wired switches, enterprise wireless and SD-WAN — engineered for the connectivity demands of hospitals, campuses and multi-site organizations.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#F57C00] text-white font-bold rounded-md hover:bg-[#e06f00] transition-colors duration-200 cursor-pointer" style="font-family:'Montserrat',sans-serif;box-shadow:0 4px 18px rgba(245,124,0,0.4);">
+            Request Consultation <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#features" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-md transition-all duration-200 cursor-pointer" style="font-family:'Montserrat',sans-serif;border:1.5px solid rgba(255,255,255,0.3);" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'">
+            Explore Features <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- INDUSTRIES / VERTICALS -->
-  <section class="bg-[#F5F7FA] py-20">
+  <!-- OVERVIEW -->
+  <section class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="orange-bar mb-5"></div>
+      <h2 class="text-3xl font-bold text-[#062A4F] mb-6 tracking-tight">A Network That Performs Under Real-World Load</h2>
+      <p class="text-[#5E6774] text-lg leading-relaxed mb-5">Your network is invisible when it works — and catastrophic when it doesn't. A dropped connection in an operating theatre, a lag spike during a financial transaction, a WiFi dead zone in a classroom: these aren't inconveniences, they're business risks.</p>
+      <p class="text-[#5E6774] leading-relaxed">Sanbay designs and deploys enterprise network infrastructure for organizations where connectivity is mission-critical. From campus-wide wired backbones to high-density wireless deployments and SD-WAN architectures connecting multiple sites, we build networks that perform under real-world load — not just on a spec sheet.</p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="bg-[#F5F7FA] py-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-14">
         <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
-        <h2 class="text-3xl font-bold text-[#062A4F] mb-4 tracking-tight">Our Verticals</h2>
-        <p class="text-[#5E6774] max-w-xl mx-auto">Deep sector knowledge that allows us to deliver solutions that meet the unique compliance, scale, and performance demands of each industry.</p>
+        <h2 class="text-3xl font-bold text-[#062A4F] mb-4 tracking-tight">Connectivity at Every Layer</h2>
+        <p class="text-[#5E6774] text-lg max-w-2xl mx-auto">From the wired backbone to the last metre of wireless coverage, every layer designed to perform.</p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center transition-colors duration-300" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Healthcare</h4>
-          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Apollo · KIMS · Hospitals</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="4" rx="1"/><rect x="2" y="14" width="20" height="4" rx="1"/><line x1="6" y1="8" x2="6" y2="8.01"/><line x1="6" y1="16" x2="6" y2="16.01"/></svg></div>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-2">Wired Switches</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed">Enterprise-grade switching infrastructure for campuses, data centres and branch offices, built for high throughput and 24/7 reliability.</p>
         </div>
-        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M5 7l-2 1v13M13 3l6 3v15M9 9v1M9 12v1M9 15v1M17 9v1M17 12v1M17 15v1"/></svg>
-          </div>
-          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Hospitality</h4>
-          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Hotels · Resorts</p>
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12" y2="20.01"/></svg></div>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-2">Wireless</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed">High-density WiFi 6/6E deployments engineered for hospitals, manufacturing floors, campuses and offices — coverage without dead zones.</p>
         </div>
-        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          </div>
-          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">BFSI & NBFSI</h4>
-          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Banks · Insurance · Finance</p>
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><line x1="8.5" y1="7.5" x2="10.5" y2="16"/><line x1="15.5" y1="7.5" x2="13.5" y2="16"/></svg></div>
+          <h3 class="text-lg font-bold text-[#062A4F] mb-2">SD-WAN Solutions</h3>
+          <p class="text-[#5E6774] text-sm leading-relaxed">Software-defined WAN that intelligently routes traffic across multiple sites, cutting costs while improving reliability and visibility.</p>
         </div>
-        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">IT & ITES</h4>
-          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Tech Companies · BPOs</p>
-        </div>
-        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="1"/><path d="M17 7V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2"/><circle cx="12" cy="13" r="2"/></svg>
-          </div>
-          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Media House</h4>
-          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Broadcast · Production</p>
-        </div>
-        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21V12h6v9"/></svg>
-          </div>
-          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Retailers</h4>
-          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Retail Chains · Stores</p>
-        </div>
-        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Education</h4>
-          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">IISc · Universities · Schools</p>
-        </div>
-        <div class="group p-6 rounded-lg text-center border border-gray-100 hover:bg-[#184A9D] hover:border-[#184A9D] transition-all duration-300 cursor-default" style="box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:rgba(24,74,157,0.08);">
-            <svg class="w-6 h-6 text-[#184A9D] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M2 12h2M20 12h2M4.93 19.07l1.41-1.41M19.07 19.07l-1.41-1.41"/></svg>
-          </div>
-          <h4 class="text-xs font-bold text-[#062A4F] group-hover:text-white transition-colors duration-300">Manufacturing</h4>
-          <p class="text-[10px] text-gray-400 group-hover:text-blue-200 mt-1 transition-colors duration-300">Industrial · OT/IT Convergence</p>
-        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SANBAY STATS -->
+  <section class="bg-[#062A4F] py-16 relative overflow-hidden">
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;border:1.5px solid rgba(245,124,0,0.15);right:-80px;top:50%;transform:translateY(-50%);"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div><div class="ibm text-4xl font-bold text-[#F57C00] mb-1">20+</div><div class="text-blue-200 text-sm">Years Network Deployment Experience</div></div>
+        <div><div class="ibm text-4xl font-bold text-[#F57C00] mb-1">5</div><div class="text-blue-200 text-sm">PAN India Offices</div></div>
+        <div><div class="ibm text-4xl font-bold text-[#F57C00] mb-1">1200+</div><div class="text-blue-200 text-sm">Organizations Connected</div></div>
+        <div><div class="ibm text-3xl font-bold text-[#F57C00] mb-1">24/7</div><div class="text-blue-200 text-sm">Network Monitoring Available</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white py-20">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="flex justify-center mb-5"><div class="orange-bar"></div></div>
+        <h2 class="text-3xl font-bold text-[#062A4F] mb-3 tracking-tight">Frequently Asked Questions</h2>
+        <p class="text-[#5E6774]">Common questions about enterprise network design and deployment.</p>
+      </div>
+      <div class="space-y-3">
+        <details class="faq-item">
+          <summary>How long does an enterprise network deployment typically take?
+            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p>Timelines depend on site count and complexity, but a single-site deployment typically takes 2-6 weeks from design to go-live, including site survey, configuration and testing.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is SD-WAN and why would my organization need it?
+            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p>SD-WAN intelligently manages traffic across multiple network connections, reducing dependency on expensive dedicated lines while improving reliability — ideal if you operate across multiple branches or offices.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you upgrade our wireless network without disrupting daily operations?
+            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p>Yes, we plan phased rollouts and schedule installation work during low-traffic periods to minimize disruption to your operations.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you provide network security alongside connectivity?
+            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p>Network security is part of our Firewall & Security Solutions offering, and we frequently design network and security architecture together for a unified, secure deployment.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do you ensure wireless coverage in large facilities like hospitals or factories?
+            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p>We conduct a detailed site survey and RF planning before deployment, mapping coverage requirements against building materials, interference sources and density needs to eliminate dead zones.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SERVICES -->
+  <section class="bg-[#F5F7FA] py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h3 class="text-xl font-bold text-[#062A4F] mb-8 text-center">Related Services</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="enterprise-solutions.html" class="related-card">
+          <h4 class="font-bold text-[#062A4F] mb-2">Enterprise Solutions</h4>
+          <p class="text-[#5E6774] text-sm mb-3">Server, storage, HCI and DC/DR solutions built to scale with your business.</p>
+          <span class="text-[#F57C00] text-sm font-semibold">Learn More →</span>
+        </a>
+        <a href="firewall-security.html" class="related-card">
+          <h4 class="font-bold text-[#062A4F] mb-2">Firewall & Security Solutions</h4>
+          <p class="text-[#5E6774] text-sm mb-3">Network and end-point security defending your critical assets.</p>
+          <span class="text-[#F57C00] text-sm font-semibold">Learn More →</span>
+        </a>
+        <a href="project-management.html" class="related-card">
+          <h4 class="font-bold text-[#062A4F] mb-2">Project Management</h4>
+          <p class="text-[#5E6774] text-sm mb-3">Passive NW, AV, CCTV and access control projects, delivered end-to-end.</p>
+          <span class="text-[#F57C00] text-sm font-semibold">Learn More →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -428,8 +363,8 @@
     <div style="position:absolute;width:500px;height:500px;border-radius:50%;border:2px solid rgba(255,255,255,0.05);right:-100px;top:50%;transform:translateY(-50%);"></div>
     <div style="position:absolute;width:300px;height:300px;border-radius:50%;border:1.5px solid rgba(245,124,0,0.18);right:60px;top:50%;transform:translateY(-50%);"></div>
     <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
-      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">Discuss Your Technology Requirements</h2>
-      <p class="text-blue-200 text-lg mb-10">Our solution architects are ready to design the right infrastructure strategy for your organization.</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">Ready for a Network That Never Lets You Down?</h2>
+      <p class="text-blue-200 text-lg mb-10">Talk to our network architects about your connectivity requirements.</p>
       <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-[#F57C00] text-white font-bold rounded-md hover:bg-[#e06f00] transition-colors duration-200 cursor-pointer" style="font-family:'Montserrat',sans-serif;box-shadow:0 4px 20px rgba(245,124,0,0.4);">
         Request a Consultation <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
