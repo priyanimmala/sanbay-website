@@ -51,6 +51,12 @@
     .cta-pill .cta-circle { width:32px; height:32px; border-radius:50%; background:#062A4F; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .cta-pill .cta-circle svg { width:15px; height:15px; color:#fff; }
     .mob-accordion-icon { transition: transform 0.2s ease; }
+    .whatsapp-float { position:fixed; bottom:24px; right:24px; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(37,211,102,0.35), 0 3px 10px rgba(6,42,79,0.18); z-index:70; transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease; text-decoration:none; }
+    .whatsapp-float svg { width:28px; height:28px; fill:#fff; }
+    .whatsapp-float:hover { transform:scale(1.08) translateY(-2px); box-shadow:0 12px 32px rgba(37,211,102,0.45), 0 4px 14px rgba(6,42,79,0.22); }
+    .whatsapp-float:active { transform:scale(0.95); }
+    .whatsapp-float:focus-visible { outline:3px solid #184A9D; outline-offset:3px; }
+    @media (max-width: 640px) { .whatsapp-float { bottom:16px; right:16px; width:52px; height:52px; } .whatsapp-float svg { width:25px; height:25px; } }
   </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -600,5 +606,10 @@
       });
     });
   </script>
+  <!-- WHATSAPP CHAT BUTTON -->
+  <a href="https://wa.me/919885147594?text=Hi%20Sanbay%20Networks%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with Sanbay Networks on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.85c0 2.09.55 4.13 1.6 5.93L0 24l6.4-1.68a11.86 11.86 0 0 0 5.64 1.44h.01c6.54 0 11.85-5.3 11.85-11.85 0-3.17-1.24-6.15-3.38-8.43zM12.05 21.4h-.01a9.6 9.6 0 0 1-4.9-1.34l-.35-.21-3.65.96.97-3.56-.23-.36a9.55 9.55 0 0 1-1.47-5.08c0-5.27 4.29-9.56 9.57-9.56 2.56 0 4.96 1 6.77 2.8a9.5 9.5 0 0 1 2.8 6.76c0 5.27-4.3 9.57-9.5 9.57zm5.24-7.17c-.29-.14-1.7-.84-1.96-.93-.26-.1-.46-.14-.65.14-.19.29-.75.93-.92 1.12-.17.19-.34.21-.63.07-.29-.14-1.22-.45-2.32-1.44-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.44.13-.58.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.65-1.57-.89-2.15-.23-.56-.47-.48-.65-.49-.17-.01-.36-.01-.55-.01-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43 0 1.43 1.03 2.81 1.17 3 .14.19 2.03 3.1 4.93 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.11.55-.08 1.7-.7 1.94-1.37.24-.68.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33z"/></svg>
+  </a>
+
 </body>
 </html>
